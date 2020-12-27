@@ -143,6 +143,33 @@ rubikscubesolver/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rubikscubesolver.dir/build.make CMakeFiles/rubikscubesolver.dir/build
 .PHONY : rubikscubesolver/fast
 
+learnopengl.o: learnopengl.cpp.o
+
+.PHONY : learnopengl.o
+
+# target to build an object file
+learnopengl.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rubikscubesolver.dir/build.make CMakeFiles/rubikscubesolver.dir/learnopengl.cpp.o
+.PHONY : learnopengl.cpp.o
+
+learnopengl.i: learnopengl.cpp.i
+
+.PHONY : learnopengl.i
+
+# target to preprocess a source file
+learnopengl.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rubikscubesolver.dir/build.make CMakeFiles/rubikscubesolver.dir/learnopengl.cpp.i
+.PHONY : learnopengl.cpp.i
+
+learnopengl.s: learnopengl.cpp.s
+
+.PHONY : learnopengl.s
+
+# target to generate assembly for a file
+learnopengl.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rubikscubesolver.dir/build.make CMakeFiles/rubikscubesolver.dir/learnopengl.cpp.s
+.PHONY : learnopengl.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -179,6 +206,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... rubikscubesolver"
+	@echo "... learnopengl.o"
+	@echo "... learnopengl.i"
+	@echo "... learnopengl.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
