@@ -80,10 +80,10 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/cmake-build-debug/learnopengl.cpp">
+		<Unit filename="/Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/main.cpp">
 			<Option target="rubikscubesolver"/>
 		</Unit>
-		<Unit filename="/Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/main.cpp">
+		<Unit filename="/Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/opengl.cpp">
 			<Option target="rubikscubesolver"/>
 		</Unit>
 		<Unit filename="/Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/CMakeLists.txt">

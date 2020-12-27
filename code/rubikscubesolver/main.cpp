@@ -1,4 +1,4 @@
-#include "learnopengl.cpp"
+#include "opengl.cpp"
 
 int main() {
     printtext();

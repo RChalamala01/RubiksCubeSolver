@@ -1,1 +1,1 @@
-/Library/Developer/CommandLineTools/usr/bin/c++  -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/rubikscubesolver.dir/main.cpp.o CMakeFiles/rubikscubesolver.dir/learnopengl.cpp.o  -o rubikscubesolver 
+/Library/Developer/CommandLineTools/usr/bin/c++  -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/rubikscubesolver.dir/main.cpp.o CMakeFiles/rubikscubesolver.dir/opengl.cpp.o  -o rubikscubesolver 

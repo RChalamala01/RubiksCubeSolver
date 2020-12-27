@@ -3,5 +3,6 @@
 
 CMakeFiles/rubikscubesolver.dir/learnopengl.cpp.o: learnopengl.cpp
 
+CMakeFiles/rubikscubesolver.dir/main.cpp.o: learnopengl.cpp
 CMakeFiles/rubikscubesolver.dir/main.cpp.o: ../main.cpp
 
