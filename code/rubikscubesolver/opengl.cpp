@@ -1,4 +1,5 @@
-//
-// Created by Rohit Chalamala on 12/26/20.
-//
+#include <iostream>
 
+void printHello() {
+    std::cout << "HELLO";
+}

@@ -1,5 +1,5 @@
-#include "opengl.cpp"
+#include "opengl.h"
 
 int main() {
-    printtext();
+    printHello();
 }

@@ -3,4 +3,4 @@ project(rubikscubesolver)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(rubikscubesolver main.cpp opengl.cpp)
+add_executable(rubikscubesolver main.cpp opengl.cpp opengl.h)

@@ -6,11 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/cmake-build-debug/learnopengl.cpp
+/Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/main.cpp
+opengl.h
+/Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/opengl.h
+
+/Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/opengl.cpp
 iostream
 -
 
-/Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/main.cpp
-cmake-build-debug/learnopengl.cpp
-/Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/cmake-build-debug/learnopengl.cpp
+/Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/opengl.h
 

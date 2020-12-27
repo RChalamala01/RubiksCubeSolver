@@ -86,6 +86,9 @@
 		<Unit filename="/Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/opengl.cpp">
 			<Option target="rubikscubesolver"/>
 		</Unit>
+		<Unit filename="/Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/opengl.h">
+			<Option target="rubikscubesolver"/>
+		</Unit>
 		<Unit filename="/Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
