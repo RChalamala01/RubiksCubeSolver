@@ -6,13 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/main.cpp
-opengl.h
-/Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/opengl.h
-
-/Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/opengl.cpp
+/Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/createcube.cpp
+createcube.h
+/Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/createcube.h
 iostream
 -
+string
+-
+array
+-
 
-/Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/opengl.h
+/Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/createcube.h
 

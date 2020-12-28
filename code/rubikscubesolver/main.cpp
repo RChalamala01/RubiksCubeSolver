@@ -1,5 +1,5 @@
-#include "opengl.h"
+#include "createcube.h"
 
-int main() {
-    printHello();
+int main(){
+    CubeGen();
 }

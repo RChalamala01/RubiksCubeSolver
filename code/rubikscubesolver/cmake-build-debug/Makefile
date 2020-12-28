@@ -143,6 +143,33 @@ rubikscubesolver/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rubikscubesolver.dir/build.make CMakeFiles/rubikscubesolver.dir/build
 .PHONY : rubikscubesolver/fast
 
+createcube.o: createcube.cpp.o
+
+.PHONY : createcube.o
+
+# target to build an object file
+createcube.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rubikscubesolver.dir/build.make CMakeFiles/rubikscubesolver.dir/createcube.cpp.o
+.PHONY : createcube.cpp.o
+
+createcube.i: createcube.cpp.i
+
+.PHONY : createcube.i
+
+# target to preprocess a source file
+createcube.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rubikscubesolver.dir/build.make CMakeFiles/rubikscubesolver.dir/createcube.cpp.i
+.PHONY : createcube.cpp.i
+
+createcube.s: createcube.cpp.s
+
+.PHONY : createcube.s
+
+# target to generate assembly for a file
+createcube.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rubikscubesolver.dir/build.make CMakeFiles/rubikscubesolver.dir/createcube.cpp.s
+.PHONY : createcube.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -170,33 +197,6 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rubikscubesolver.dir/build.make CMakeFiles/rubikscubesolver.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-opengl.o: opengl.cpp.o
-
-.PHONY : opengl.o
-
-# target to build an object file
-opengl.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rubikscubesolver.dir/build.make CMakeFiles/rubikscubesolver.dir/opengl.cpp.o
-.PHONY : opengl.cpp.o
-
-opengl.i: opengl.cpp.i
-
-.PHONY : opengl.i
-
-# target to preprocess a source file
-opengl.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rubikscubesolver.dir/build.make CMakeFiles/rubikscubesolver.dir/opengl.cpp.i
-.PHONY : opengl.cpp.i
-
-opengl.s: opengl.cpp.s
-
-.PHONY : opengl.s
-
-# target to generate assembly for a file
-opengl.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rubikscubesolver.dir/build.make CMakeFiles/rubikscubesolver.dir/opengl.cpp.s
-.PHONY : opengl.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -206,12 +206,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... rubikscubesolver"
+	@echo "... createcube.o"
+	@echo "... createcube.i"
+	@echo "... createcube.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... opengl.o"
-	@echo "... opengl.i"
-	@echo "... opengl.s"
 .PHONY : help
 
 

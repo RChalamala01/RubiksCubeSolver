@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/rubikscubesolver.dir/createcube.cpp.o"
   "CMakeFiles/rubikscubesolver.dir/main.cpp.o"
-  "CMakeFiles/rubikscubesolver.dir/opengl.cpp.o"
   "rubikscubesolver"
   "rubikscubesolver.pdb"
 )
