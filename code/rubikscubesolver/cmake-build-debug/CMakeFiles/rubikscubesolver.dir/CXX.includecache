@@ -15,6 +15,10 @@ string
 -
 array
 -
+stdio.h
+-
+stdlib.h
+-
 
 /Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/createcube.h
 

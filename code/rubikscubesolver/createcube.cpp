@@ -20,7 +20,6 @@ void LCCW(std::array<std::array<char,9>, 6> &cube);
 void RCW(std::array<std::array<char,9>, 6> &cube);
 void RCCW(std::array<std::array<char,9>, 6> &cube);
 void CWFaceTurn(std::array<std::array<char,9>, 6> &cube, int colorIndex);
-void CCWFaceTurn(std::array<std::array<char,9>, 6> &cube, int colorIndex);
 void CubeScramble(std::array<std::array<char,9>, 6> &cube);
 
 void CubeGen(){
@@ -58,7 +57,6 @@ void CubeGen(){
      * To view yellow, rotate cube by 180 degrees up from white.
     */
 
-    CubeScramble(cube);
 
     for (int i = 0; i < 6; i++){
         cout << side[i] << endl;
@@ -135,51 +133,24 @@ void CubeScramble(std::array<std::array<char,9>, 6> &cube){
 }
 
 
-D' F' U' B R L F B R' U' F R' D' F' U2 B' F' L2 B' D L D'
-
 void FCW(std::array<std::array<char,9>, 6> &cube){
     std::array<std::array<char,9>,6> temp;
     temp = cube;
-    for (int i = 1; i < 5; i++){
-        for (int j = 0; j < 9; j++){
-            if ((i == 1) && (j == 6)){
-                cube[i][j] = temp[4][8];
-            }
-            else if ((i == 1) && (j == 7)){
-                cube[i][j] = temp[4][5];
-            }
-            else if ((i == 1) && (j == 8)){
-                cube[i][j] = temp[4][2];
-            }
-            else if ((i == 2) && (j == 0)){
-                cube[i][j] = temp[i-1][6];
-            }
-            else if ((i == 2) && (j == 3)){
-                cube[i][j] = temp[i-1][7];
-            }
-            else if ((i == 2) && (j == 6)){
-                cube[i][j] = temp[i-1][8];
-            }
-            else if ((i == 3) && (j == 0)){
-                cube[i][j] = temp[i-1][6];
-            }
-            else if ((i == 3) && (j == 1)){
-                cube[i][j] = temp[i-1][3];
-            }
-            else if ((i == 3) && (j == 2)){
-                cube[i][j] = temp[i-1][0];
-            }
-            else if ((i == 4) && (j == 2)){
-                cube[i][j] = temp[i-1][0];
-            }
-            else if ((i == 4) && (j == 5)){
-                cube[i][j] = temp[i-1][1];
-            }
-            else if ((i == 4) && (j == 8)){
-                cube[i][j] = temp[i-1][2];
-            }
-        }
-    }
+
+    cube[1][6] = temp[4][8];
+    cube[1][7] = temp[4][5];
+    cube[1][8] = temp[4][2];
+    cube[2][0] = temp[1][6];
+    cube[2][3] = temp[1][7];
+    cube[2][6] = temp[1][8];
+    cube[2][3] = temp[1][7];
+    cube[3][0] = temp[2][6];
+    cube[3][1] = temp[2][3];
+    cube[3][2] = temp[2][0];
+    cube[4][2] = temp[3][0];
+    cube[4][5] = temp[3][1];
+    cube[4][8] = temp[3][2];
+
     CWFaceTurn(cube, 0);
 }
 
@@ -192,46 +163,20 @@ void FCCW(std::array<std::array<char,9>, 6> &cube){
 void BCW(std::array<std::array<char,9>, 6> &cube){
     std::array<std::array<char,9>,6> temp;
     temp = cube;
-    for (int i = 1; i < 5; i++){
-        for (int j = 0; j < 9; j++){
-            if ((i == 1) && (j == 0)){
-                cube[i][j] = temp[2][2];
-            }
-            else if ((i == 1) && (j == 1)){
-                cube[i][j] = temp[2][5];
-            }
-            else if ((i == 1) && (j == 2)){
-                cube[i][j] = temp[2][8];
-            }
-            else if ((i == 2) && (j == 2)){
-                cube[i][j] = temp[i+1][8];
-            }
-            else if ((i == 2) && (j == 5)){
-                cube[i][j] = temp[i+1][7];
-            }
-            else if ((i == 2) && (j == 8)){
-                cube[i][j] = temp[i+1][6];
-            }
-            else if ((i == 3) && (j == 6)){
-                cube[i][j] = temp[i+1][0];
-            }
-            else if ((i == 3) && (j == 7)){
-                cube[i][j] = temp[i+1][3];
-            }
-            else if ((i == 3) && (j == 8)){
-                cube[i][j] = temp[i+1][6];
-            }
-            else if ((i == 4) && (j == 0)){
-                cube[i][j] = temp[1][2];
-            }
-            else if ((i == 4) && (j == 3)){
-                cube[i][j] = temp[1][1];
-            }
-            else if ((i == 4) && (j == 6)){
-                cube[i][j] = temp[1][0];
-            }
-        }
-    }
+
+    cube[1][0] = temp[2][2];
+    cube[1][1] = temp[2][5];
+    cube[1][2] = temp[2][8];
+    cube[2][2] = temp[3][8];
+    cube[2][5] = temp[3][7];
+    cube[2][8] = temp[3][6];
+    cube[3][6] = temp[4][0];
+    cube[3][7] = temp[4][3];
+    cube[3][8] = temp[4][6];
+    cube[4][0] = temp[1][2];
+    cube[4][3] = temp[1][1];
+    cube[4][6] = temp[1][0];
+
     CWFaceTurn(cube, 5);
 }
 
@@ -244,29 +189,20 @@ void BCCW(std::array<std::array<char,9>, 6> &cube){
 void UCW(std::array<std::array<char,9>, 6> &cube){
     std::array<std::array<char,9>,6> temp;
     temp = cube;
-    for (int i = 0; i < 6; i++){
-        for (int j = 0; j < 3; j++){
-            if ( i == 1 || i == 3){
-                break;
-            }
-            else if (i == 0){
-                cube[i][j] = temp[2][j];
-            }
-            else if (i == 2){
-                if (j == 0) cube[i][j] = temp[5][8];
-                if (j == 1) cube[i][j] = temp[5][7];
-                if (j == 2) cube[i][j] = temp[5][6];
-            }
-            else if (i == 4){
-                cube[i][j] = temp[0][j];
-            }
-            else if (i == 5) {
-                if (j == 0) cube[i][j+6] = temp[4][2];
-                if (j == 1) cube[i][j+6] = temp[4][1];
-                if (j == 2) cube[i][j+6] = temp[4][0];
-            }
-        }
-    }
+
+    cube[0][0] = temp[2][0];
+    cube[0][1] = temp[2][1];
+    cube[0][2] = temp[2][2];
+    cube[2][0] = temp[5][8];
+    cube[2][1] = temp[5][7];
+    cube[2][2] = temp[5][6];
+    cube[4][0] = temp[0][0];
+    cube[4][1] = temp[0][1];
+    cube[4][2] = temp[0][2];
+    cube[5][6] = temp[4][2];
+    cube[5][7] = temp[4][1];
+    cube[5][8] = temp[4][0];
+
     CWFaceTurn(cube, 1);
 }
 
@@ -279,29 +215,20 @@ void UCCW(std::array<std::array<char,9>, 6> &cube){
 void DCW(std::array<std::array<char,9>, 6> &cube){
     std::array<std::array<char,9>,6> temp;
     temp = cube;
-    for (int i = 0; i < 6; i++){
-        for (int j = 6; j < 9; j++){
-            if ( i == 1 || i == 3){
-                break;
-            }
-            else if (i == 0){
-                cube[i][j] = temp[4][j];
-            }
-            else if (i == 2){
-                cube[i][j] = temp[0][j];
-            }
-            else if (i == 4){
-                if (j == 6) cube[i][j] = temp[5][2];
-                if (j == 7) cube[i][j] = temp[5][1];
-                if (j == 8) cube[i][j] = temp[5][0];
-            }
-            else if (i == 5) {
-                if (j == 6) cube[i][j-6] = temp[2][8];
-                if (j == 7) cube[i][j-6] = temp[2][7];
-                if (j == 8) cube[i][j-6] = temp[2][6];
-            }
-        }
-    }
+
+    cube[0][6] = temp[4][6];
+    cube[0][7] = temp[4][7];
+    cube[0][8] = temp[4][8];
+    cube[2][6] = temp[0][6];
+    cube[2][7] = temp[0][7];
+    cube[2][8] = temp[0][8];
+    cube[4][6] = temp[5][2];
+    cube[4][7] = temp[5][1];
+    cube[4][8] = temp[5][0];
+    cube[5][0] = temp[2][8];
+    cube[5][1] = temp[2][7];
+    cube[5][2] = temp[2][6];
+
     CWFaceTurn(cube, 3);
 }
 
@@ -314,28 +241,20 @@ void DCCW(std::array<std::array<char,9>, 6> &cube){
 void LCW(std::array<std::array<char,9>, 6> &cube){
     std::array<std::array<char,9>,6> temp;
     temp = cube;
-    for (int i = 0; i < 6; i++){
-        for (int j = 0; j < 9; j++){
-            if (j % 3 != 0){
-                continue;
-            }
-            if (i == 2 || i == 4){
-                break;
-            }
-            else if (i == 0){
-                cube[i][j] = temp[1][j];
-            }
-            else if (i == 1){
-                cube[i][j] = temp[5][j];
-            }
-            else if (i == 3){
-                cube[i][j] = temp[0][j];
-            }
-            else if (i == 5) {
-                cube[i][j] = temp[3][j];
-            }
-        }
-    }
+
+    cube[0][0] = temp[1][0];
+    cube[0][3] = temp[1][3];
+    cube[0][6] = temp[1][6];
+    cube[1][0] = temp[5][0];
+    cube[1][3] = temp[5][3];
+    cube[1][6] = temp[5][6];
+    cube[3][0] = temp[0][0];
+    cube[3][3] = temp[0][3];
+    cube[3][6] = temp[0][6];
+    cube[5][0] = temp[3][0];
+    cube[5][3] = temp[3][3];
+    cube[5][6] = temp[3][6];
+
     CWFaceTurn(cube, 4);
 }
 
@@ -348,28 +267,20 @@ void LCCW(std::array<std::array<char,9>, 6> &cube){
 void RCW(std::array<std::array<char,9>, 6> &cube){
     std::array<std::array<char,9>,6> temp;
     temp = cube;
-    for (int i = 0; i < 6; i++){
-        for (int j = 0; j < 9; j++){
-            if (j % 3 != 2){
-                continue;
-            }
-            if ( i == 2 || i == 4){
-                break;
-            }
-            else if (i == 0){
-                cube[i][j] = temp[3][j];
-            }
-            else if (i == 1){
-                cube[i][j] = temp[0][j];
-            }
-            else if (i == 3){
-                cube[i][j] = temp[5][j];
-            }
-            else if (i == 5) {
-                cube[i][j] = temp[1][j];
-            }
-        }
-    }
+
+    cube[0][2] = temp[3][2];
+    cube[0][5] = temp[3][5];
+    cube[0][8] = temp[3][8];
+    cube[1][2] = temp[0][2];
+    cube[1][5] = temp[0][5];
+    cube[1][8] = temp[0][8];
+    cube[3][2] = temp[5][2];
+    cube[3][5] = temp[5][5];
+    cube[3][8] = temp[5][8];
+    cube[5][2] = temp[1][2];
+    cube[5][5] = temp[1][5];
+    cube[5][8] = temp[1][8];
+
     CWFaceTurn(cube, 2);
 }
 
@@ -382,6 +293,7 @@ void RCCW(std::array<std::array<char,9>, 6> &cube){
 void CWFaceTurn(std::array<std::array<char,9>, 6> &cube, int colorIndex){
     std::array<std::array<char,9>,6> temp;
     temp = cube;
+
     cube[colorIndex][0] = temp[colorIndex][6];
     cube[colorIndex][1] = temp[colorIndex][3];
     cube[colorIndex][2] = temp[colorIndex][0];
@@ -392,15 +304,3 @@ void CWFaceTurn(std::array<std::array<char,9>, 6> &cube, int colorIndex){
     cube[colorIndex][8] = temp[colorIndex][2];
 }
 
-void CCWFaceTurn(std::array<std::array<char,9>, 6> &cube, int colorIndex){
-    std::array<std::array<char,9>,6> temp;
-    temp = cube;
-    cube[colorIndex][0] = temp[colorIndex][2];
-    cube[colorIndex][1] = temp[colorIndex][5];
-    cube[colorIndex][2] = temp[colorIndex][8];
-    cube[colorIndex][3] = temp[colorIndex][1];
-    cube[colorIndex][5] = temp[colorIndex][7];
-    cube[colorIndex][6] = temp[colorIndex][0];
-    cube[colorIndex][7] = temp[colorIndex][3];
-    cube[colorIndex][8] = temp[colorIndex][6];
-}
