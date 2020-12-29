@@ -17,5 +17,7 @@ void RCW();
 void RCCW();
 void CWFaceTurn();
 void CubeScramble();
+void PrintCube();
+void OriginalState();
 
 #endif //RUBIKSCUBESOLVER_CREATECUBE_H

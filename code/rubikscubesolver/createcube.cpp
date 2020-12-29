@@ -21,11 +21,12 @@ void RCW(std::array<std::array<char,9>, 6> &cube);
 void RCCW(std::array<std::array<char,9>, 6> &cube);
 void CWFaceTurn(std::array<std::array<char,9>, 6> &cube, int colorIndex);
 void CubeScramble(std::array<std::array<char,9>, 6> &cube);
+void PrintCube(std::array<std::array<char,9>, 6> &cube);
+void OriginalState(std::array<std::array<char,9>, 6> &cube);
 
 void CubeGen(){
     /*Cube Order: Same as color enum*/
     std::array<std::array<char,9>,6> cube;
-    std::array<string,6> side = {"Front", "Up", "Right", "Down", "Left", "Back"};
     /*
     cout << "White - Front, Red - Up, Green - Right, Orange - Down, Blue - Left,  Yellow - Back\n";
     cout << "Enter cubies for each side from top left to bottom right\n";
@@ -38,6 +39,28 @@ void CubeGen(){
     TakeInput("Yellow", cube, 5);
     */
 
+    OriginalState(cube);
+
+    /* Rotation Notation: Everything based on Front (White Side).
+     * Cube needs to initially be in the correct orientation.
+     * To view red, rotate cube by 90 degrees down from white.
+     * To view green, rotate cube by 90 degrees left from white.
+     * To view orange, rotate cube by 90 degrees up from white.
+     * To view yellow, rotate cube by 180 degrees up from white.
+    */
+
+    PrintCube(cube);
+
+}
+
+void TakeInput(string color, std::array<std::array<char,9>, 6> &cube, int colorIndex){
+    cout << "Enter in the " << color << " side:";
+    for (int i = 0; i < 9; i++){
+        cin >> cube[colorIndex][i];
+    }
+}
+
+void OriginalState(std::array<std::array<char,9>, 6> &cube){
     for (int i = 0; i < 6; i++){
         for (int j = 0; j < 9; j++){
             if (i == 0) cube[i][j] = 'W';
@@ -48,15 +71,12 @@ void CubeGen(){
             if (i == 5) cube[i][j] = 'Y';
         }
     }
+}
 
-    /* Rotation Notation: Everything based on Front (White Side).
-     * Cube needs to initially be in the correct orientation.
-     * To view red, rotate cube by 90 degrees down from white.
-     * To view green, rotate cube by 90 degrees left from white.
-     * To view orange, rotate cube by 90 degrees up from white.
-     * To view yellow, rotate cube by 180 degrees up from white.
-    */
+void PrintCube(std::array<std::array<char,9>, 6> &cube){
+    std::array<string,6> side = {"Front", "Up", "Right", "Down", "Left", "Back"};
 
+    cout << "\n";
 
     for (int i = 0; i < 6; i++){
         cout << side[i] << endl;
@@ -67,13 +87,6 @@ void CubeGen(){
             }
         }
         cout << endl;
-    }
-}
-
-void TakeInput(string color, std::array<std::array<char,9>, 6> &cube, int colorIndex){
-    cout << "Enter in the " << color << " side:";
-    for (int i = 0; i < 9; i++){
-        cin >> cube[colorIndex][i];
     }
 }
 
