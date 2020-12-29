@@ -2,6 +2,8 @@
 #include <iostream>
 #include <string>
 #include <array>
+#include <stdio.h>
+#include <stdlib.h>
 
 using namespace std;
 void TakeInput(string color, std::array<std::array<char,9>, 6> &cube, int colorIndex);
@@ -19,7 +21,7 @@ void RCW(std::array<std::array<char,9>, 6> &cube);
 void RCCW(std::array<std::array<char,9>, 6> &cube);
 void CWFaceTurn(std::array<std::array<char,9>, 6> &cube, int colorIndex);
 void CCWFaceTurn(std::array<std::array<char,9>, 6> &cube, int colorIndex);
-
+void CubeScramble(std::array<std::array<char,9>, 6> &cube);
 
 void CubeGen(){
     /*Cube Order: Same as color enum*/
@@ -56,18 +58,7 @@ void CubeGen(){
      * To view yellow, rotate cube by 180 degrees up from white.
     */
 
-    FCCW(cube);
-    DCCW(cube);
-    RCCW(cube);
-    LCCW(cube);
-    UCCW(cube);
-    BCCW(cube);
-    FCW(cube);
-    DCW(cube);
-    RCW(cube);
-    LCW(cube);
-    UCW(cube);
-    BCW(cube);
+    CubeScramble(cube);
 
     for (int i = 0; i < 6; i++){
         cout << side[i] << endl;
@@ -87,6 +78,64 @@ void TakeInput(string color, std::array<std::array<char,9>, 6> &cube, int colorI
         cin >> cube[colorIndex][i];
     }
 }
+
+void CubeScramble(std::array<std::array<char,9>, 6> &cube){
+    for (int i = 0; i < 30; i++){
+        int num = rand() % 12;
+        if (num == 0){
+            FCW(cube);
+            cout << "F ";
+        }
+        else if (num == 1){
+            FCCW(cube);
+            cout << "F' ";
+        }
+        else if (num == 2){
+            BCW(cube);
+            cout << "B ";
+        }
+        else if (num == 3){
+            BCCW(cube);
+            cout << "B' ";
+        }
+        else if (num == 4){
+            UCW(cube);
+            cout << "U ";
+        }
+        else if (num == 5){
+            UCCW(cube);
+            cout << "U' ";
+        }
+        else if (num == 6){
+            DCW(cube);
+            cout << "D ";
+        }
+        else if (num == 7){
+            DCCW(cube);
+            cout << "D' ";
+        }
+        else if (num == 8){
+            LCW(cube);
+            cout << "L ";
+        }
+        else if (num == 9){
+            LCCW(cube);
+            cout << "L' ";
+        }
+        else if (num == 10){
+            RCW(cube);
+            cout << "R ";
+        }
+        else if (num == 11){
+            RCCW(cube);
+            cout << "R' ";
+        }
+    }
+    cout << "\n\n";
+}
+
+
+D' F' U' B R L F B R' U' F R' D' F' U2 B' F' L2 B' D L D'
 
 void FCW(std::array<std::array<char,9>, 6> &cube){
     std::array<std::array<char,9>,6> temp;
@@ -270,7 +319,7 @@ void LCW(std::array<std::array<char,9>, 6> &cube){
             if (j % 3 != 0){
                 continue;
             }
-            if ( i == 2 || i == 4){
+            if (i == 2 || i == 4){
                 break;
             }
             else if (i == 0){
