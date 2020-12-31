@@ -3,6 +3,9 @@
 
 void CubeGen();
 void TakeInput();
+void CubeScramble();
+void PrintCube();
+void OriginalState();
 void FCW();
 void FCCW();
 void BCW();
@@ -16,8 +19,6 @@ void LCCW();
 void RCW();
 void RCCW();
 void CWFaceTurn();
-void CubeScramble();
-void PrintCube();
-void OriginalState();
+void PieceTypeCheck();
 
 #endif //RUBIKSCUBESOLVER_CREATECUBE_H

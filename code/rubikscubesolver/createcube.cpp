@@ -4,9 +4,13 @@
 #include <array>
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 using namespace std;
 void TakeInput(string color, std::array<std::array<char,9>, 6> &cube, int colorIndex);
+void CubeScramble(std::array<std::array<char,9>, 6> &cube);
+void PrintCube(std::array<std::array<char,9>, 6> &cube);
+void OriginalState(std::array<std::array<char,9>, 6> &cube);
 void FCW(std::array<std::array<char,9>, 6> &cube);
 void FCCW(std::array<std::array<char,9>, 6> &cube);
 void BCW(std::array<std::array<char,9>, 6> &cube);
@@ -20,9 +24,7 @@ void LCCW(std::array<std::array<char,9>, 6> &cube);
 void RCW(std::array<std::array<char,9>, 6> &cube);
 void RCCW(std::array<std::array<char,9>, 6> &cube);
 void CWFaceTurn(std::array<std::array<char,9>, 6> &cube, int colorIndex);
-void CubeScramble(std::array<std::array<char,9>, 6> &cube);
-void PrintCube(std::array<std::array<char,9>, 6> &cube);
-void OriginalState(std::array<std::array<char,9>, 6> &cube);
+void PieceTypeCheck(std::array<std::array<char,9>, 6> &cube, int colorIndex, int i, int j);
 
 void CubeGen(){
     /*Cube Order: Same as color enum*/
@@ -40,6 +42,7 @@ void CubeGen(){
     */
 
     OriginalState(cube);
+    CubeScramble(cube);
 
     /* Rotation Notation: Everything based on Front (White Side).
      * Cube needs to initially be in the correct orientation.
@@ -91,6 +94,7 @@ void PrintCube(std::array<std::array<char,9>, 6> &cube){
 }
 
 void CubeScramble(std::array<std::array<char,9>, 6> &cube){
+    srand(time(0));
     for (int i = 0; i < 30; i++){
         int num = rand() % 12;
         if (num == 0){
@@ -144,7 +148,6 @@ void CubeScramble(std::array<std::array<char,9>, 6> &cube){
     }
     cout << "\n\n";
 }
-
 
 void FCW(std::array<std::array<char,9>, 6> &cube){
     std::array<std::array<char,9>,6> temp;
@@ -317,3 +320,6 @@ void CWFaceTurn(std::array<std::array<char,9>, 6> &cube, int colorIndex){
     cube[colorIndex][8] = temp[colorIndex][2];
 }
 
+void PieceTypeCheck(std::array<std::array<char,9>, 6> &cube, int colorIndex, int i, int j){
+
+}
