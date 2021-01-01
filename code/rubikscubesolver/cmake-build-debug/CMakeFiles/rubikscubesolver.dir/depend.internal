@@ -4,6 +4,15 @@
 CMakeFiles/rubikscubesolver.dir/createcube.cpp.o
  /Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/createcube.cpp
  /Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/createcube.h
+ /Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/rotations.h
+ /Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/solver.h
 CMakeFiles/rubikscubesolver.dir/main.cpp.o
  /Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/createcube.h
  /Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/main.cpp
+CMakeFiles/rubikscubesolver.dir/rotations.cpp.o
+ /Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/rotations.cpp
+ /Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/rotations.h
+CMakeFiles/rubikscubesolver.dir/solver.cpp.o
+ /Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/rotations.h
+ /Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/solver.cpp
+ /Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/solver.h

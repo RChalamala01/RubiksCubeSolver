@@ -3,7 +3,16 @@
 
 CMakeFiles/rubikscubesolver.dir/createcube.cpp.o: ../createcube.cpp
 CMakeFiles/rubikscubesolver.dir/createcube.cpp.o: ../createcube.h
+CMakeFiles/rubikscubesolver.dir/createcube.cpp.o: ../rotations.h
+CMakeFiles/rubikscubesolver.dir/createcube.cpp.o: ../solver.h
 
 CMakeFiles/rubikscubesolver.dir/main.cpp.o: ../createcube.h
 CMakeFiles/rubikscubesolver.dir/main.cpp.o: ../main.cpp
+
+CMakeFiles/rubikscubesolver.dir/rotations.cpp.o: ../rotations.cpp
+CMakeFiles/rubikscubesolver.dir/rotations.cpp.o: ../rotations.h
+
+CMakeFiles/rubikscubesolver.dir/solver.cpp.o: ../rotations.h
+CMakeFiles/rubikscubesolver.dir/solver.cpp.o: ../solver.cpp
+CMakeFiles/rubikscubesolver.dir/solver.cpp.o: ../solver.h
 

@@ -7,6 +7,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/createcube.cpp" "/Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/cmake-build-debug/CMakeFiles/rubikscubesolver.dir/createcube.cpp.o"
   "/Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/main.cpp" "/Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/cmake-build-debug/CMakeFiles/rubikscubesolver.dir/main.cpp.o"
   "/Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/rotations.cpp" "/Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/cmake-build-debug/CMakeFiles/rubikscubesolver.dir/rotations.cpp.o"
+  "/Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/solver.cpp" "/Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/cmake-build-debug/CMakeFiles/rubikscubesolver.dir/solver.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 

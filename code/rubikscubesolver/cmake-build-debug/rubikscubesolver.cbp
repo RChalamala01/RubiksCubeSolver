@@ -95,6 +95,12 @@
 		<Unit filename="/Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/rotations.h">
 			<Option target="rubikscubesolver"/>
 		</Unit>
+		<Unit filename="/Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/solver.cpp">
+			<Option target="rubikscubesolver"/>
+		</Unit>
+		<Unit filename="/Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/solver.h">
+			<Option target="rubikscubesolver"/>
+		</Unit>
 		<Unit filename="/Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

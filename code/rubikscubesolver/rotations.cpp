@@ -1,6 +1,7 @@
 #include <string>
 #include <array>
 #include "rotations.h"
+#include <iostream>
 
 using namespace std;
 
@@ -23,12 +24,14 @@ void fCW(std::array<std::array<char,9>, 6> &cube){
     cube[4][8] = temp[3][2];
 
     faceTurnCW(cube, 0);
+    cout << "F ";
 }
 
 void fCCW(std::array<std::array<char,9>, 6> &cube){
     fCW(cube);
     fCW(cube);
     fCW(cube);
+    //cout << "F' ";
 }
 
 void bCW(std::array<std::array<char,9>, 6> &cube){
@@ -49,12 +52,14 @@ void bCW(std::array<std::array<char,9>, 6> &cube){
     cube[4][6] = temp[1][0];
 
     faceTurnCW(cube, 5);
+    cout << "B ";
 }
 
 void bCCW(std::array<std::array<char,9>, 6> &cube){
     bCW(cube);
     bCW(cube);
     bCW(cube);
+    //cout << "B' ";
 }
 
 void uCW(std::array<std::array<char,9>, 6> &cube){
@@ -75,12 +80,14 @@ void uCW(std::array<std::array<char,9>, 6> &cube){
     cube[5][8] = temp[4][0];
 
     faceTurnCW(cube, 1);
+    cout << "U ";
 }
 
 void uCCW(std::array<std::array<char,9>, 6> &cube){
     uCW(cube);
     uCW(cube);
     uCW(cube);
+    //cout << "U' ";
 }
 
 void dCW(std::array<std::array<char,9>, 6> &cube){
@@ -101,12 +108,14 @@ void dCW(std::array<std::array<char,9>, 6> &cube){
     cube[5][2] = temp[2][6];
 
     faceTurnCW(cube, 3);
+    cout << "D ";
 }
 
 void dCCW(std::array<std::array<char,9>, 6> &cube){
     dCW(cube);
     dCW(cube);
     dCW(cube);
+    //cout << "D' ";
 }
 
 void lCW(std::array<std::array<char,9>, 6> &cube){
@@ -127,12 +136,14 @@ void lCW(std::array<std::array<char,9>, 6> &cube){
     cube[5][6] = temp[3][6];
 
     faceTurnCW(cube, 4);
+    cout << "L ";
 }
 
 void lCCW(std::array<std::array<char,9>, 6> &cube){
     lCW(cube);
     lCW(cube);
     lCW(cube);
+    //cout << "L' ";
 }
 
 void rCW(std::array<std::array<char,9>, 6> &cube){
@@ -153,12 +164,14 @@ void rCW(std::array<std::array<char,9>, 6> &cube){
     cube[5][8] = temp[1][8];
 
     faceTurnCW(cube, 2);
+    cout << "R ";
 }
 
 void rCCW(std::array<std::array<char,9>, 6> &cube){
     rCW(cube);
     rCW(cube);
     rCW(cube);
+    //cout << "R' ";
 }
 
 void faceTurnCW(std::array<std::array<char,9>, 6> &cube, int colorIndex){
