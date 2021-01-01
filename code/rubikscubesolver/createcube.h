@@ -1,24 +1,17 @@
 #ifndef RUBIKSCUBESOLVER_CREATECUBE_H
 #define RUBIKSCUBESOLVER_CREATECUBE_H
 
-void CubeGen();
-void TakeInput();
-void CubeScramble();
-void PrintCube();
-void OriginalState();
-void FCW();
-void FCCW();
-void BCW();
-void BCCW();
-void UCW();
-void UCCW();
-void DCW();
-void DCCW();
-void LCW();
-void LCCW();
-void RCW();
-void RCCW();
-void CWFaceTurn();
-void PieceTypeCheck();
+#include <string>
+#include <array>
+
+void cubeGen();
+void takeInput(std::string color, std::array<std::array<char,9>, 6> &cube, int colorIndex);
+void cubeScramble(std::array<std::array<char,9>, 6> &cube);
+void printCube(std::array<std::array<char,9>, 6> &cube);
+void originalState(std::array<std::array<char,9>, 6> &cube);
+int pieceTypeCheck(int i);
+void solveCross(std::array<std::array<char,9>, 6> &cube);
+int crossCheck(std::array<std::array<char,9>, 6> &cube);
+char findAdj(std::array<std::array<char,9>, 6> &cube);
 
 #endif //RUBIKSCUBESOLVER_CREATECUBE_H

@@ -11,20 +11,30 @@ createcube.h
 /Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/createcube.h
 iostream
 -
+array
+-
+cstdlib
+-
+ctime
+-
+rotations.h
+/Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/rotations.h
+
+/Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/createcube.h
 string
 -
 array
 -
-stdio.h
--
-stdlib.h
--
-time.h
--
 
-/Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/createcube.h
+/Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/rotations.cpp
+string
+-
+array
+-
+rotations.h
+/Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/rotations.h
 
-/Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/main.cpp
-createcube.h
-/Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/createcube.h
+/Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/rotations.h
+array
+-
 

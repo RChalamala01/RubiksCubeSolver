@@ -197,6 +197,33 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rubikscubesolver.dir/build.make CMakeFiles/rubikscubesolver.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+rotations.o: rotations.cpp.o
+
+.PHONY : rotations.o
+
+# target to build an object file
+rotations.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rubikscubesolver.dir/build.make CMakeFiles/rubikscubesolver.dir/rotations.cpp.o
+.PHONY : rotations.cpp.o
+
+rotations.i: rotations.cpp.i
+
+.PHONY : rotations.i
+
+# target to preprocess a source file
+rotations.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rubikscubesolver.dir/build.make CMakeFiles/rubikscubesolver.dir/rotations.cpp.i
+.PHONY : rotations.cpp.i
+
+rotations.s: rotations.cpp.s
+
+.PHONY : rotations.s
+
+# target to generate assembly for a file
+rotations.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rubikscubesolver.dir/build.make CMakeFiles/rubikscubesolver.dir/rotations.cpp.s
+.PHONY : rotations.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -212,6 +239,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... rotations.o"
+	@echo "... rotations.i"
+	@echo "... rotations.s"
 .PHONY : help
 
 

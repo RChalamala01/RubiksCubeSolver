@@ -1,6 +1,6 @@
 #include "createcube.h"
 
 int main(){
-    CubeGen();
-
+    cubeGen();
+    return 0;
 }

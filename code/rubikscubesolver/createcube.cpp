@@ -1,32 +1,14 @@
 #include "createcube.h"
 #include <iostream>
-#include <string>
 #include <array>
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
+#include <cstdlib>
+#include <ctime>
+
+#include "rotations.h"
 
 using namespace std;
-void TakeInput(string color, std::array<std::array<char,9>, 6> &cube, int colorIndex);
-void CubeScramble(std::array<std::array<char,9>, 6> &cube);
-void PrintCube(std::array<std::array<char,9>, 6> &cube);
-void OriginalState(std::array<std::array<char,9>, 6> &cube);
-void FCW(std::array<std::array<char,9>, 6> &cube);
-void FCCW(std::array<std::array<char,9>, 6> &cube);
-void BCW(std::array<std::array<char,9>, 6> &cube);
-void BCCW(std::array<std::array<char,9>, 6> &cube);
-void UCW(std::array<std::array<char,9>, 6> &cube);
-void UCCW(std::array<std::array<char,9>, 6> &cube);
-void DCW(std::array<std::array<char,9>, 6> &cube);
-void DCCW(std::array<std::array<char,9>, 6> &cube);
-void LCW(std::array<std::array<char,9>, 6> &cube);
-void LCCW(std::array<std::array<char,9>, 6> &cube);
-void RCW(std::array<std::array<char,9>, 6> &cube);
-void RCCW(std::array<std::array<char,9>, 6> &cube);
-void CWFaceTurn(std::array<std::array<char,9>, 6> &cube, int colorIndex);
-void PieceTypeCheck(std::array<std::array<char,9>, 6> &cube, int colorIndex, int i, int j);
 
-void CubeGen(){
+void cubeGen(){
     /*Cube Order: Same as color enum*/
     std::array<std::array<char,9>,6> cube;
     /*
@@ -41,8 +23,8 @@ void CubeGen(){
     TakeInput("Yellow", cube, 5);
     */
 
-    OriginalState(cube);
-    CubeScramble(cube);
+    originalState(cube);
+    cubeScramble(cube);
 
     /* Rotation Notation: Everything based on Front (White Side).
      * Cube needs to initially be in the correct orientation.
@@ -52,18 +34,20 @@ void CubeGen(){
      * To view yellow, rotate cube by 180 degrees up from white.
     */
 
-    PrintCube(cube);
+    //PrintCube(cube);
+    //SolveCross(cube);
+    printCube(cube);
 
 }
 
-void TakeInput(string color, std::array<std::array<char,9>, 6> &cube, int colorIndex){
+void takeInput(string color, std::array<std::array<char,9>, 6> &cube, int colorIndex){
     cout << "Enter in the " << color << " side:";
     for (int i = 0; i < 9; i++){
         cin >> cube[colorIndex][i];
     }
 }
 
-void OriginalState(std::array<std::array<char,9>, 6> &cube){
+void originalState(std::array<std::array<char,9>, 6> &cube){
     for (int i = 0; i < 6; i++){
         for (int j = 0; j < 9; j++){
             if (i == 0) cube[i][j] = 'W';
@@ -76,7 +60,7 @@ void OriginalState(std::array<std::array<char,9>, 6> &cube){
     }
 }
 
-void PrintCube(std::array<std::array<char,9>, 6> &cube){
+void printCube(std::array<std::array<char,9>, 6> &cube){
     std::array<string,6> side = {"Front", "Up", "Right", "Down", "Left", "Back"};
 
     cout << "\n";
@@ -93,233 +77,186 @@ void PrintCube(std::array<std::array<char,9>, 6> &cube){
     }
 }
 
-void CubeScramble(std::array<std::array<char,9>, 6> &cube){
-    srand(time(0));
+void cubeScramble(std::array<std::array<char,9>, 6> &cube){
+    //std:: mt19937
+    srand(time(nullptr));
     for (int i = 0; i < 30; i++){
         int num = rand() % 12;
         if (num == 0){
-            FCW(cube);
+            fCW(cube);
             cout << "F ";
         }
         else if (num == 1){
-            FCCW(cube);
+            fCCW(cube);
             cout << "F' ";
         }
         else if (num == 2){
-            BCW(cube);
+            bCW(cube);
             cout << "B ";
         }
         else if (num == 3){
-            BCCW(cube);
+            bCCW(cube);
             cout << "B' ";
         }
         else if (num == 4){
-            UCW(cube);
+            uCW(cube);
             cout << "U ";
         }
         else if (num == 5){
-            UCCW(cube);
+            uCCW(cube);
             cout << "U' ";
         }
         else if (num == 6){
-            DCW(cube);
+            dCW(cube);
             cout << "D ";
         }
         else if (num == 7){
-            DCCW(cube);
+            dCCW(cube);
             cout << "D' ";
         }
         else if (num == 8){
-            LCW(cube);
+            lCW(cube);
             cout << "L ";
         }
         else if (num == 9){
-            LCCW(cube);
+            lCCW(cube);
             cout << "L' ";
         }
         else if (num == 10){
-            RCW(cube);
+            rCW(cube);
             cout << "R ";
         }
         else if (num == 11){
-            RCCW(cube);
+            rCCW(cube);
             cout << "R' ";
         }
     }
-    cout << "\n\n";
+    cout << "\n";
 }
 
-void FCW(std::array<std::array<char,9>, 6> &cube){
-    std::array<std::array<char,9>,6> temp;
-    temp = cube;
 
-    cube[1][6] = temp[4][8];
-    cube[1][7] = temp[4][5];
-    cube[1][8] = temp[4][2];
-    cube[2][0] = temp[1][6];
-    cube[2][3] = temp[1][7];
-    cube[2][6] = temp[1][8];
-    cube[2][3] = temp[1][7];
-    cube[3][0] = temp[2][6];
-    cube[3][1] = temp[2][3];
-    cube[3][2] = temp[2][0];
-    cube[4][2] = temp[3][0];
-    cube[4][5] = temp[3][1];
-    cube[4][8] = temp[3][2];
+int pieceTypeCheck(int i){
+    if (i == 4){
+        return 0; //center piece
+    }
+    else if (i % 2 == 1){
+        return 1; //edge piece
+    }
+    else{
+        return 2; //corner piece
+    }
+}
+/*
+char findAdj(std::array<std::array<char,9>, 6> &cube){
+    for (int i = 0; i < 6; i++){
+        for (int j = 0; j < 9; j++){
+            if (j % 2 != 1){
+                continue;
+            }
+            if (i == 0){
+                if (j == 1){
+                    return cube[1][7];
+                }
+                if (j == 3){
+                    return cube[4][5];
+                }
+                if (j == 5){
+                    return cube[2][3];
+                }
+                if (j == 7){
+                    return cube[3][1];
+                }
+            }
+            if (i == 1){
+                if (j == 1){
+                    return cube[3][1];
+                }
+                if (j == 3){
 
-    CWFaceTurn(cube, 0);
+                }
+                if (j == 5){
+
+                }
+                if (j == 7){
+
+                }
+            }
+            if (i == 2){
+                if (j == 1){
+
+                }
+                if (j == 3){
+
+                }
+                if (j == 5){
+
+                }
+                if (j == 7){
+
+                }
+            }
+            if (i == 3){
+                if (j == 1){
+
+                }
+                if (j == 3){
+
+                }
+                if (j == 5){
+
+                }
+                if (j == 7){
+
+                }
+            }
+            if (i == 4){
+                if (j == 1){
+
+                }
+                if (j == 3){
+
+                }
+                if (j == 5){
+
+                }
+                if (j == 7){
+
+                }
+            }
+            if (i == 5){
+                if (j == 1){
+
+                }
+                if (j == 3){
+
+                }
+                if (j == 5){
+
+                }
+                if (j == 7){
+
+                }
+            }
+
+        }
+    }
 }
 
-void FCCW(std::array<std::array<char,9>, 6> &cube){
-    FCW(cube);
-    FCW(cube);
-    FCW(cube);
+void solveCross(std::array<std::array<char,9>, 6> &cube){
+    while (crossCheck(cube) != 1) {
+
+    }
 }
 
-void BCW(std::array<std::array<char,9>, 6> &cube){
-    std::array<std::array<char,9>,6> temp;
-    temp = cube;
-
-    cube[1][0] = temp[2][2];
-    cube[1][1] = temp[2][5];
-    cube[1][2] = temp[2][8];
-    cube[2][2] = temp[3][8];
-    cube[2][5] = temp[3][7];
-    cube[2][8] = temp[3][6];
-    cube[3][6] = temp[4][0];
-    cube[3][7] = temp[4][3];
-    cube[3][8] = temp[4][6];
-    cube[4][0] = temp[1][2];
-    cube[4][3] = temp[1][1];
-    cube[4][6] = temp[1][0];
-
-    CWFaceTurn(cube, 5);
+int crossCheck(std::array<std::array<char,9>, 6> &cube){
+    for (int i = 0; i < 9; i++){
+        if (i % 2 != 1){
+            continue;
+        }
+        if (cube[0][i] != 'W'){
+            return 0;
+        }
+    }
+    return 1;
 }
-
-void BCCW(std::array<std::array<char,9>, 6> &cube){
-    BCW(cube);
-    BCW(cube);
-    BCW(cube);
-}
-
-void UCW(std::array<std::array<char,9>, 6> &cube){
-    std::array<std::array<char,9>,6> temp;
-    temp = cube;
-
-    cube[0][0] = temp[2][0];
-    cube[0][1] = temp[2][1];
-    cube[0][2] = temp[2][2];
-    cube[2][0] = temp[5][8];
-    cube[2][1] = temp[5][7];
-    cube[2][2] = temp[5][6];
-    cube[4][0] = temp[0][0];
-    cube[4][1] = temp[0][1];
-    cube[4][2] = temp[0][2];
-    cube[5][6] = temp[4][2];
-    cube[5][7] = temp[4][1];
-    cube[5][8] = temp[4][0];
-
-    CWFaceTurn(cube, 1);
-}
-
-void UCCW(std::array<std::array<char,9>, 6> &cube){
-    UCW(cube);
-    UCW(cube);
-    UCW(cube);
-}
-
-void DCW(std::array<std::array<char,9>, 6> &cube){
-    std::array<std::array<char,9>,6> temp;
-    temp = cube;
-
-    cube[0][6] = temp[4][6];
-    cube[0][7] = temp[4][7];
-    cube[0][8] = temp[4][8];
-    cube[2][6] = temp[0][6];
-    cube[2][7] = temp[0][7];
-    cube[2][8] = temp[0][8];
-    cube[4][6] = temp[5][2];
-    cube[4][7] = temp[5][1];
-    cube[4][8] = temp[5][0];
-    cube[5][0] = temp[2][8];
-    cube[5][1] = temp[2][7];
-    cube[5][2] = temp[2][6];
-
-    CWFaceTurn(cube, 3);
-}
-
-void DCCW(std::array<std::array<char,9>, 6> &cube){
-    DCW(cube);
-    DCW(cube);
-    DCW(cube);
-}
-
-void LCW(std::array<std::array<char,9>, 6> &cube){
-    std::array<std::array<char,9>,6> temp;
-    temp = cube;
-
-    cube[0][0] = temp[1][0];
-    cube[0][3] = temp[1][3];
-    cube[0][6] = temp[1][6];
-    cube[1][0] = temp[5][0];
-    cube[1][3] = temp[5][3];
-    cube[1][6] = temp[5][6];
-    cube[3][0] = temp[0][0];
-    cube[3][3] = temp[0][3];
-    cube[3][6] = temp[0][6];
-    cube[5][0] = temp[3][0];
-    cube[5][3] = temp[3][3];
-    cube[5][6] = temp[3][6];
-
-    CWFaceTurn(cube, 4);
-}
-
-void LCCW(std::array<std::array<char,9>, 6> &cube){
-    LCW(cube);
-    LCW(cube);
-    LCW(cube);
-}
-
-void RCW(std::array<std::array<char,9>, 6> &cube){
-    std::array<std::array<char,9>,6> temp;
-    temp = cube;
-
-    cube[0][2] = temp[3][2];
-    cube[0][5] = temp[3][5];
-    cube[0][8] = temp[3][8];
-    cube[1][2] = temp[0][2];
-    cube[1][5] = temp[0][5];
-    cube[1][8] = temp[0][8];
-    cube[3][2] = temp[5][2];
-    cube[3][5] = temp[5][5];
-    cube[3][8] = temp[5][8];
-    cube[5][2] = temp[1][2];
-    cube[5][5] = temp[1][5];
-    cube[5][8] = temp[1][8];
-
-    CWFaceTurn(cube, 2);
-}
-
-void RCCW(std::array<std::array<char,9>, 6> &cube){
-    RCW(cube);
-    RCW(cube);
-    RCW(cube);
-}
-
-void CWFaceTurn(std::array<std::array<char,9>, 6> &cube, int colorIndex){
-    std::array<std::array<char,9>,6> temp;
-    temp = cube;
-
-    cube[colorIndex][0] = temp[colorIndex][6];
-    cube[colorIndex][1] = temp[colorIndex][3];
-    cube[colorIndex][2] = temp[colorIndex][0];
-    cube[colorIndex][3] = temp[colorIndex][7];
-    cube[colorIndex][5] = temp[colorIndex][1];
-    cube[colorIndex][6] = temp[colorIndex][8];
-    cube[colorIndex][7] = temp[colorIndex][5];
-    cube[colorIndex][8] = temp[colorIndex][2];
-}
-
-void PieceTypeCheck(std::array<std::array<char,9>, 6> &cube, int colorIndex, int i, int j){
-
-}
+ */
