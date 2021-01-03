@@ -11,9 +11,9 @@ void cubeGen(){
     /*Cube Order: Same as color enum*/
     std::array<std::array<char,9>,6> cube;
     /*
-    cout << "White - Front, Red - Up, Green - Right, Orange - Down, Blue - Left,  Yellow - Back\n";
-    cout << "Enter cubies for each side from top left to bottom right\n";
-    cout << "Enter it in this format, white - W, red - R, green - G, orange - O, blue - B,  yellow - Y, \n";
+    std::cout << "White - Front, Red - Up, Green - Right, Orange - Down, Blue - Left,  Yellow - Back\n";
+    std::cout << "Enter cubies for each side from top left to bottom right\n";
+    std::cout << "Enter it in this format, white - W, red - R, green - G, orange - O, blue - B,  yellow - Y, \n";
     TakeInput("White", cube, 0);
     TakeInput("Red", cube, 1);
     TakeInput("Green", cube, 2);
@@ -23,7 +23,9 @@ void cubeGen(){
     */
 
     originalState(cube);
+
     cubeScramble(cube);
+    printCube(cube);
 
     /* Rotation Notation: Everything based on Front (White Side).
      * Cube needs to initially be in the correct orientation.
@@ -33,7 +35,7 @@ void cubeGen(){
      * To view yellow, rotate cube by 180 degrees up from white.
     */
 
-    printCube(cube);
+
     solveCross(cube);
     printCube(cube);
 
@@ -47,6 +49,7 @@ void takeInput(std::string color, std::array<std::array<char,9>, 6> &cube, int c
 }
 
 void originalState(std::array<std::array<char,9>, 6> &cube){
+    //sets the solved state, or original state of the cube.
     for (int i = 0; i < 6; i++){
         for (int j = 0; j < 9; j++){
             if (i == 0) cube[i][j] = 'W';
@@ -60,6 +63,7 @@ void originalState(std::array<std::array<char,9>, 6> &cube){
 }
 
 void printCube(std::array<std::array<char,9>, 6> &cube){
+    //prints out the cube.
     std::array<std::string,6> side = {"Front", "Up", "Right", "Down", "Left", "Back"};
 
     std::cout << "\n";
@@ -77,6 +81,7 @@ void printCube(std::array<std::array<char,9>, 6> &cube){
 }
 
 void cubeScramble(std::array<std::array<char,9>, 6> &cube){
+    //scrambles the cube by randomly picking one of 12 rotation functions.
     srand(time(nullptr));
     for (int i = 0; i < 30; i++){
         int num = rand() % 12;

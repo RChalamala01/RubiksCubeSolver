@@ -16,5 +16,6 @@ void lCCW(std::array<std::array<char,9>, 6> &cube);
 void rCW(std::array<std::array<char,9>, 6> &cube);
 void rCCW(std::array<std::array<char,9>, 6> &cube);
 void faceTurnCW(std::array<std::array<char,9>, 6> &cube, int colorIndex);
+void faceTurnCCW(std::array<std::array<char,9>, 6> &cube, int colorIndex);
 
 #endif //RUBIKSCUBESOLVER_ROTATIONS_H

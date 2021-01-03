@@ -5,6 +5,7 @@
 
 
 int pieceTypeCheck(int i){
+    //checks what type of piece is being looked at.
     if (i == 4){
         return 0; //center piece
     }
@@ -17,7 +18,9 @@ int pieceTypeCheck(int i){
 }
 
 char findAdj(std::array<std::array<char,9>, 6> &cube, int i, int j){
+    //finds the adjacent edge color.
 
+    //if we're looking at a white edge.
     if (i == 0){
         if (j == 1){
             return cube[1][7];
@@ -32,6 +35,8 @@ char findAdj(std::array<std::array<char,9>, 6> &cube, int i, int j){
             return cube[3][1];
         }
     }
+
+    //if we're looking at a red edge.
     if (i == 1){
         if (j == 1){
             return cube[5][7];
@@ -46,6 +51,8 @@ char findAdj(std::array<std::array<char,9>, 6> &cube, int i, int j){
             return cube[0][1];
         }
     }
+
+    //if we're looking at a green edge.
     if (i == 2){
         if (j == 1){
             return cube[1][5];
@@ -60,6 +67,8 @@ char findAdj(std::array<std::array<char,9>, 6> &cube, int i, int j){
             return cube[3][5];
         }
     }
+
+    //if we're looking at a orange edge.
     if (i == 3){
         if (j == 1){
             return cube[0][7];
@@ -74,6 +83,8 @@ char findAdj(std::array<std::array<char,9>, 6> &cube, int i, int j){
             return cube[5][1];
         }
     }
+
+    //if we're looking at a blue edge.
     if (i == 4){
         if (j == 1){
             return cube[1][3];
@@ -88,6 +99,8 @@ char findAdj(std::array<std::array<char,9>, 6> &cube, int i, int j){
             return cube[3][3];
         }
     }
+
+    //if we're looking at a yellow edge.
     if (i == 5){
         if (j == 1){
             return cube[3][7];
@@ -105,6 +118,7 @@ char findAdj(std::array<std::array<char,9>, 6> &cube, int i, int j){
 }
 
 int crossCheck(std::array<std::array<char,9>, 6> &cube){
+    //checks if the white cross is complete.
     for (int i = 0; i < 9; i++){
         if (i % 2 != 1){
             continue;
@@ -117,6 +131,9 @@ int crossCheck(std::array<std::array<char,9>, 6> &cube){
 }
 
 void solveCross(std::array<std::array<char,9>, 6> &cube){
+    //solves the white cross
+
+    //to place the red and white piece.
     for (int i = 0; i < 6; i++){
         for (int j = 0; j < 9; j++){
             if ((pieceTypeCheck(j) != 1) || (cube[i][j] != 'W')){
@@ -237,7 +254,7 @@ void solveCross(std::array<std::array<char,9>, 6> &cube){
     }
 
 
-
+    //to place the green and white piece.
     for (int i = 0; i < 6; i++){
         for (int j = 0; j < 9; j++){
             if ((pieceTypeCheck(j) != 1) || (cube[i][j] != 'W')){
@@ -367,7 +384,7 @@ void solveCross(std::array<std::array<char,9>, 6> &cube){
     }
 
 
-
+    //to place the orange and white piece.
     for (int i = 0; i < 6; i++){
         for (int j = 0; j < 9; j++){
             if ((pieceTypeCheck(j) != 1) || (cube[i][j] != 'W')){
@@ -476,7 +493,7 @@ void solveCross(std::array<std::array<char,9>, 6> &cube){
     }
 
 
-
+    //to place the blue and white piece.
     for (int i = 0; i < 6; i++){
         for (int j = 0; j < 9; j++){
             if ((pieceTypeCheck(j) != 1) || (cube[i][j] != 'W')){
