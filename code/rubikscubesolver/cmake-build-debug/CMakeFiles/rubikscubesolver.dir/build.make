@@ -116,25 +116,25 @@ CMakeFiles/rubikscubesolver.dir/rotations.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rubikscubesolver.dir/rotations.cpp.s"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/rotations.cpp -o CMakeFiles/rubikscubesolver.dir/rotations.cpp.s
 
-CMakeFiles/rubikscubesolver.dir/solver.cpp.o: CMakeFiles/rubikscubesolver.dir/flags.make
-CMakeFiles/rubikscubesolver.dir/solver.cpp.o: ../solver.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/rubikscubesolver.dir/solver.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/rubikscubesolver.dir/solver.cpp.o -c /Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/solver.cpp
+CMakeFiles/rubikscubesolver.dir/crosssolver.cpp.o: CMakeFiles/rubikscubesolver.dir/flags.make
+CMakeFiles/rubikscubesolver.dir/crosssolver.cpp.o: ../crosssolver.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/rubikscubesolver.dir/crosssolver.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/rubikscubesolver.dir/crosssolver.cpp.o -c /Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/crosssolver.cpp
 
-CMakeFiles/rubikscubesolver.dir/solver.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/rubikscubesolver.dir/solver.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/solver.cpp > CMakeFiles/rubikscubesolver.dir/solver.cpp.i
+CMakeFiles/rubikscubesolver.dir/crosssolver.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/rubikscubesolver.dir/crosssolver.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/crosssolver.cpp > CMakeFiles/rubikscubesolver.dir/crosssolver.cpp.i
 
-CMakeFiles/rubikscubesolver.dir/solver.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rubikscubesolver.dir/solver.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/solver.cpp -o CMakeFiles/rubikscubesolver.dir/solver.cpp.s
+CMakeFiles/rubikscubesolver.dir/crosssolver.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rubikscubesolver.dir/crosssolver.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/crosssolver.cpp -o CMakeFiles/rubikscubesolver.dir/crosssolver.cpp.s
 
 # Object files for target rubikscubesolver
 rubikscubesolver_OBJECTS = \
 "CMakeFiles/rubikscubesolver.dir/main.cpp.o" \
 "CMakeFiles/rubikscubesolver.dir/createcube.cpp.o" \
 "CMakeFiles/rubikscubesolver.dir/rotations.cpp.o" \
-"CMakeFiles/rubikscubesolver.dir/solver.cpp.o"
+"CMakeFiles/rubikscubesolver.dir/crosssolver.cpp.o"
 
 # External object files for target rubikscubesolver
 rubikscubesolver_EXTERNAL_OBJECTS =
@@ -142,7 +142,7 @@ rubikscubesolver_EXTERNAL_OBJECTS =
 rubikscubesolver: CMakeFiles/rubikscubesolver.dir/main.cpp.o
 rubikscubesolver: CMakeFiles/rubikscubesolver.dir/createcube.cpp.o
 rubikscubesolver: CMakeFiles/rubikscubesolver.dir/rotations.cpp.o
-rubikscubesolver: CMakeFiles/rubikscubesolver.dir/solver.cpp.o
+rubikscubesolver: CMakeFiles/rubikscubesolver.dir/crosssolver.cpp.o
 rubikscubesolver: CMakeFiles/rubikscubesolver.dir/build.make
 rubikscubesolver: CMakeFiles/rubikscubesolver.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable rubikscubesolver"

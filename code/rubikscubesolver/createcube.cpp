@@ -5,7 +5,7 @@
 #include <ctime>
 
 #include "rotations.h"
-#include "solver.h"
+#include "crosssolver.h"
 
 void cubeGen(){
     /*Cube Order: Same as color enum*/

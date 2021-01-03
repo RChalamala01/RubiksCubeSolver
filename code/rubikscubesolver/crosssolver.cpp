@@ -1,6 +1,6 @@
 #include <array>
 
-#include "solver.h"
+#include "crosssolver.h"
 #include "rotations.h"
 
 
@@ -598,5 +598,4 @@ void solveCross(std::array<std::array<char,9>, 6> &cube){
         }
     }
 }
-
 

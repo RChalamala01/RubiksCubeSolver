@@ -170,6 +170,33 @@ createcube.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rubikscubesolver.dir/build.make CMakeFiles/rubikscubesolver.dir/createcube.cpp.s
 .PHONY : createcube.cpp.s
 
+crosssolver.o: crosssolver.cpp.o
+
+.PHONY : crosssolver.o
+
+# target to build an object file
+crosssolver.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rubikscubesolver.dir/build.make CMakeFiles/rubikscubesolver.dir/crosssolver.cpp.o
+.PHONY : crosssolver.cpp.o
+
+crosssolver.i: crosssolver.cpp.i
+
+.PHONY : crosssolver.i
+
+# target to preprocess a source file
+crosssolver.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rubikscubesolver.dir/build.make CMakeFiles/rubikscubesolver.dir/crosssolver.cpp.i
+.PHONY : crosssolver.cpp.i
+
+crosssolver.s: crosssolver.cpp.s
+
+.PHONY : crosssolver.s
+
+# target to generate assembly for a file
+crosssolver.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rubikscubesolver.dir/build.make CMakeFiles/rubikscubesolver.dir/crosssolver.cpp.s
+.PHONY : crosssolver.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -224,33 +251,6 @@ rotations.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rubikscubesolver.dir/build.make CMakeFiles/rubikscubesolver.dir/rotations.cpp.s
 .PHONY : rotations.cpp.s
 
-solver.o: solver.cpp.o
-
-.PHONY : solver.o
-
-# target to build an object file
-solver.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rubikscubesolver.dir/build.make CMakeFiles/rubikscubesolver.dir/solver.cpp.o
-.PHONY : solver.cpp.o
-
-solver.i: solver.cpp.i
-
-.PHONY : solver.i
-
-# target to preprocess a source file
-solver.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rubikscubesolver.dir/build.make CMakeFiles/rubikscubesolver.dir/solver.cpp.i
-.PHONY : solver.cpp.i
-
-solver.s: solver.cpp.s
-
-.PHONY : solver.s
-
-# target to generate assembly for a file
-solver.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rubikscubesolver.dir/build.make CMakeFiles/rubikscubesolver.dir/solver.cpp.s
-.PHONY : solver.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -263,15 +263,15 @@ help:
 	@echo "... createcube.o"
 	@echo "... createcube.i"
 	@echo "... createcube.s"
+	@echo "... crosssolver.o"
+	@echo "... crosssolver.i"
+	@echo "... crosssolver.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
 	@echo "... rotations.o"
 	@echo "... rotations.i"
 	@echo "... rotations.s"
-	@echo "... solver.o"
-	@echo "... solver.i"
-	@echo "... solver.s"
 .PHONY : help
 
 
