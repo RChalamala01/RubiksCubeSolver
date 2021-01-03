@@ -1,9 +1,6 @@
-#include <string>
 #include <array>
 #include "rotations.h"
 #include <iostream>
-
-using namespace std;
 
 void fCW(std::array<std::array<char,9>, 6> &cube){
     std::array<std::array<char,9>,6> temp;
@@ -24,7 +21,7 @@ void fCW(std::array<std::array<char,9>, 6> &cube){
     cube[4][8] = temp[3][2];
 
     faceTurnCW(cube, 0);
-    cout << "F ";
+    std::cout << "F ";
 }
 
 void fCCW(std::array<std::array<char,9>, 6> &cube){
@@ -52,7 +49,7 @@ void bCW(std::array<std::array<char,9>, 6> &cube){
     cube[4][6] = temp[1][0];
 
     faceTurnCW(cube, 5);
-    cout << "B ";
+    std::cout << "B ";
 }
 
 void bCCW(std::array<std::array<char,9>, 6> &cube){
@@ -80,7 +77,7 @@ void uCW(std::array<std::array<char,9>, 6> &cube){
     cube[5][8] = temp[4][0];
 
     faceTurnCW(cube, 1);
-    cout << "U ";
+    std::cout << "U ";
 }
 
 void uCCW(std::array<std::array<char,9>, 6> &cube){
@@ -108,7 +105,7 @@ void dCW(std::array<std::array<char,9>, 6> &cube){
     cube[5][2] = temp[2][6];
 
     faceTurnCW(cube, 3);
-    cout << "D ";
+    std::cout << "D ";
 }
 
 void dCCW(std::array<std::array<char,9>, 6> &cube){
@@ -136,7 +133,7 @@ void lCW(std::array<std::array<char,9>, 6> &cube){
     cube[5][6] = temp[3][6];
 
     faceTurnCW(cube, 4);
-    cout << "L ";
+    std::cout << "L ";
 }
 
 void lCCW(std::array<std::array<char,9>, 6> &cube){
@@ -164,7 +161,7 @@ void rCW(std::array<std::array<char,9>, 6> &cube){
     cube[5][8] = temp[1][8];
 
     faceTurnCW(cube, 2);
-    cout << "R ";
+    std::cout << "R ";
 }
 
 void rCCW(std::array<std::array<char,9>, 6> &cube){

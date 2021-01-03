@@ -6,17 +6,17 @@
 
 #IncludeRegexTransform: 
 
-/Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/rotations.cpp
-string
--
-array
--
-rotations.h
 /Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/rotations.h
-iostream
+array
 -
 
-/Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/rotations.h
+/Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/solver.cpp
 array
 -
+solver.h
+/Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/solver.h
+rotations.h
+/Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/rotations.h
+
+/Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/solver.h
 

@@ -7,8 +7,6 @@
 #include "rotations.h"
 #include "solver.h"
 
-using namespace std;
-
 void cubeGen(){
     /*Cube Order: Same as color enum*/
     std::array<std::array<char,9>,6> cube;
@@ -41,10 +39,10 @@ void cubeGen(){
 
 }
 
-void takeInput(string color, std::array<std::array<char,9>, 6> &cube, int colorIndex){
-    cout << "Enter in the " << color << " side:";
+void takeInput(std::string color, std::array<std::array<char,9>, 6> &cube, int colorIndex){
+    std::cout << "Enter in the " << color << " side:";
     for (int i = 0; i < 9; i++){
-        cin >> cube[colorIndex][i];
+        std::cin >> cube[colorIndex][i];
     }
 }
 
@@ -62,24 +60,23 @@ void originalState(std::array<std::array<char,9>, 6> &cube){
 }
 
 void printCube(std::array<std::array<char,9>, 6> &cube){
-    std::array<string,6> side = {"Front", "Up", "Right", "Down", "Left", "Back"};
+    std::array<std::string,6> side = {"Front", "Up", "Right", "Down", "Left", "Back"};
 
-    cout << "\n";
+    std::cout << "\n";
 
     for (int i = 0; i < 6; i++){
-        cout << side[i] << endl;
+        std::cout << side[i] << std::endl;
         for (int j = 0; j < 9; j++){
-            cout << cube[i][j];
+            std::cout << cube[i][j];
             if ((j+1) % 3 == 0){
-                cout << endl;
+                std::cout << std::endl;
             }
         }
-        cout << endl;
+        std::cout << std::endl;
     }
 }
 
 void cubeScramble(std::array<std::array<char,9>, 6> &cube){
-    //std:: mt19937
     srand(time(nullptr));
     for (int i = 0; i < 30; i++){
         int num = rand() % 12;
@@ -120,7 +117,7 @@ void cubeScramble(std::array<std::array<char,9>, 6> &cube){
             rCCW(cube);
         }
     }
-    cout << "\n";
+    std::cout << "\n";
 }
 
 
