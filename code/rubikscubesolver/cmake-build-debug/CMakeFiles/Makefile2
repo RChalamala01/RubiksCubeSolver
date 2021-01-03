@@ -94,12 +94,12 @@ clean: CMakeFiles/rubikscubesolver.dir/clean
 CMakeFiles/rubikscubesolver.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rubikscubesolver.dir/build.make CMakeFiles/rubikscubesolver.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rubikscubesolver.dir/build.make CMakeFiles/rubikscubesolver.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5 "Built target rubikscubesolver"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6 "Built target rubikscubesolver"
 .PHONY : CMakeFiles/rubikscubesolver.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/rubikscubesolver.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/cmake-build-debug/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/cmake-build-debug/CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/rubikscubesolver.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/rubikscubesolver.dir/rule

@@ -197,6 +197,33 @@ crosssolver.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rubikscubesolver.dir/build.make CMakeFiles/rubikscubesolver.dir/crosssolver.cpp.s
 .PHONY : crosssolver.cpp.s
 
+f2lsolver.o: f2lsolver.cpp.o
+
+.PHONY : f2lsolver.o
+
+# target to build an object file
+f2lsolver.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rubikscubesolver.dir/build.make CMakeFiles/rubikscubesolver.dir/f2lsolver.cpp.o
+.PHONY : f2lsolver.cpp.o
+
+f2lsolver.i: f2lsolver.cpp.i
+
+.PHONY : f2lsolver.i
+
+# target to preprocess a source file
+f2lsolver.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rubikscubesolver.dir/build.make CMakeFiles/rubikscubesolver.dir/f2lsolver.cpp.i
+.PHONY : f2lsolver.cpp.i
+
+f2lsolver.s: f2lsolver.cpp.s
+
+.PHONY : f2lsolver.s
+
+# target to generate assembly for a file
+f2lsolver.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rubikscubesolver.dir/build.make CMakeFiles/rubikscubesolver.dir/f2lsolver.cpp.s
+.PHONY : f2lsolver.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -266,6 +293,9 @@ help:
 	@echo "... crosssolver.o"
 	@echo "... crosssolver.i"
 	@echo "... crosssolver.s"
+	@echo "... f2lsolver.o"
+	@echo "... f2lsolver.i"
+	@echo "... f2lsolver.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

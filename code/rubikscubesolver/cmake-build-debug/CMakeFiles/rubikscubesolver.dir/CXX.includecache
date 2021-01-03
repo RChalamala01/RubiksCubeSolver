@@ -19,24 +19,12 @@ ctime
 -
 rotations.h
 /Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/rotations.h
-crosssolver.h
-/Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/crosssolver.h
 
 /Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/createcube.h
 string
 -
 array
 -
-
-/Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/crosssolver.cpp
-array
--
-crosssolver.h
-/Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/crosssolver.h
-rotations.h
-/Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/rotations.h
-
-/Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/crosssolver.h
 
 /Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/rotations.h
 array

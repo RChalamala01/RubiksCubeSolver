@@ -4,14 +4,16 @@
 CMakeFiles/rubikscubesolver.dir/createcube.cpp.o
  /Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/createcube.cpp
  /Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/createcube.h
- /Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/crosssolver.h
  /Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/rotations.h
 CMakeFiles/rubikscubesolver.dir/crosssolver.cpp.o
  /Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/crosssolver.cpp
  /Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/crosssolver.h
  /Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/rotations.h
+CMakeFiles/rubikscubesolver.dir/f2lsolver.cpp.o
+ /Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/f2lsolver.cpp
 CMakeFiles/rubikscubesolver.dir/main.cpp.o
  /Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/createcube.h
+ /Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/crosssolver.h
  /Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/main.cpp
 CMakeFiles/rubikscubesolver.dir/rotations.cpp.o
  /Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/rotations.cpp

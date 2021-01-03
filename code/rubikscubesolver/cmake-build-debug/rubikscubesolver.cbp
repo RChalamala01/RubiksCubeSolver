@@ -92,6 +92,12 @@
 		<Unit filename="/Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/crosssolver.h">
 			<Option target="rubikscubesolver"/>
 		</Unit>
+		<Unit filename="/Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/f2lsolver.cpp">
+			<Option target="rubikscubesolver"/>
+		</Unit>
+		<Unit filename="/Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/f2lsolver.h">
+			<Option target="rubikscubesolver"/>
+		</Unit>
 		<Unit filename="/Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/main.cpp">
 			<Option target="rubikscubesolver"/>
 		</Unit>

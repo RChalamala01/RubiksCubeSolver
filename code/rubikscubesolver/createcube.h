@@ -4,7 +4,7 @@
 #include <string>
 #include <array>
 
-void cubeGen();
+void cubeGen(std::array<std::array<char,9>, 6> &cube);
 void takeInput(std::string color, std::array<std::array<char,9>, 6> &cube, int colorIndex);
 void cubeScramble(std::array<std::array<char,9>, 6> &cube);
 void printCube(std::array<std::array<char,9>, 6> &cube);

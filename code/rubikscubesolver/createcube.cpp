@@ -5,39 +5,18 @@
 #include <ctime>
 
 #include "rotations.h"
-#include "crosssolver.h"
 
-void cubeGen(){
-    /*Cube Order: Same as color enum*/
-    std::array<std::array<char,9>,6> cube;
-    /*
+void cubeGen(std::array<std::array<char,9>, 6> &cube){
+
     std::cout << "White - Front, Red - Up, Green - Right, Orange - Down, Blue - Left,  Yellow - Back\n";
     std::cout << "Enter cubies for each side from top left to bottom right\n";
     std::cout << "Enter it in this format, white - W, red - R, green - G, orange - O, blue - B,  yellow - Y, \n";
-    TakeInput("White", cube, 0);
-    TakeInput("Red", cube, 1);
-    TakeInput("Green", cube, 2);
-    TakeInput("Orange", cube, 3);
-    TakeInput("Blue", cube, 4);
-    TakeInput("Yellow", cube, 5);
-    */
-
-    originalState(cube);
-
-    cubeScramble(cube);
-    printCube(cube);
-
-    /* Rotation Notation: Everything based on Front (White Side).
-     * Cube needs to initially be in the correct orientation.
-     * To view red, rotate cube by 90 degrees down from white.
-     * To view green, rotate cube by 90 degrees left from white.
-     * To view orange, rotate cube by 90 degrees up from white.
-     * To view yellow, rotate cube by 180 degrees up from white.
-    */
-
-
-    solveCross(cube);
-    printCube(cube);
+    takeInput("White", cube, 0);
+    takeInput("Red", cube, 1);
+    takeInput("Green", cube, 2);
+    takeInput("Orange", cube, 3);
+    takeInput("Blue", cube, 4);
+    takeInput("Yellow", cube, 5);
 
 }
 
