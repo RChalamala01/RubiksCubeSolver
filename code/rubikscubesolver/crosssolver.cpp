@@ -4,12 +4,12 @@
 #include "rotations.h"
 
 
-int pieceTypeCheck(int i){
+int pieceTypeCheck(int j){
     //checks what type of piece is being looked at.
-    if (i == 4){
+    if (j == 4){
         return 0; //center piece
     }
-    else if (i % 2 == 1){
+    else if (j % 2 == 1){
         return 1; //edge piece
     }
     else{
@@ -117,17 +117,30 @@ char findAdj(std::array<std::array<char,9>, 6> &cube, int i, int j){
     }
 }
 
-int crossCheck(std::array<std::array<char,9>, 6> &cube){
+bool crossCheck(std::array<std::array<char,9>, 6> &cube){
     //checks if the white cross is complete.
-    for (int i = 0; i < 9; i++){
-        if (i % 2 != 1){
-            continue;
-        }
-        if (cube[0][i] != 'W'){
-            return 0;
-        }
-    }
-    return 1;
+    if (cube[0][0] != 'W') return false;
+    if (cube[0][1] != 'W') return false;
+    if (cube[0][2] != 'W') return false;
+    if (cube[0][3] != 'W') return false;
+    if (cube[0][4] != 'W') return false;
+    if (cube[0][5] != 'W') return false;
+    if (cube[0][6] != 'W') return false;
+    if (cube[0][7] != 'W') return false;
+    if (cube[0][8] != 'W') return false;
+    if (cube[1][7] != 'R') return false;
+    if (cube[2][3] != 'G') return false;
+    if (cube[3][1] != 'O') return false;
+    if (cube[4][5] != 'B') return false;
+    if (cube[1][6] != 'R') return false;
+    if (cube[4][2] != 'B') return false;
+    if (cube[1][8] != 'R') return false;
+    if (cube[2][0] != 'G') return false;
+    if (cube[2][6] != 'G') return false;
+    if (cube[3][2] != 'O') return false;
+    if (cube[3][0] != 'O') return false;
+    if (cube[4][8] != 'B') return false;
+    return true;
 }
 
 void solveCross(std::array<std::array<char,9>, 6> &cube){
@@ -375,7 +388,6 @@ void solveCross(std::array<std::array<char,9>, 6> &cube){
                 }
                 if (i == 5 && j == 7){
                     bCCW(cube);
-                    uCW(cube);
                     rCW(cube);
                     rCW(cube);
                 }
@@ -550,10 +562,9 @@ void solveCross(std::array<std::array<char,9>, 6> &cube){
                     dCCW(cube);
                 }
                 if (i == 4 && j == 1){
-                    lCW(cube);
-                    fCCW(cube);
-                    dCW(cube);
                     fCW(cube);
+                    uCCW(cube);
+                    fCCW(cube);
                 }
                 if (i == 4 && j == 3){
                     fCW(cube);

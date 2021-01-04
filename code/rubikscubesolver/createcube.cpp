@@ -20,7 +20,7 @@ void cubeGen(std::array<std::array<char,9>, 6> &cube){
 
 }
 
-void takeInput(std::string color, std::array<std::array<char,9>, 6> &cube, int colorIndex){
+void takeInput(const std::string color, std::array<std::array<char,9>, 6> &cube, int colorIndex){
     std::cout << "Enter in the " << color << " side:";
     for (int i = 0; i < 9; i++){
         std::cin >> cube[colorIndex][i];
@@ -62,7 +62,8 @@ void printCube(std::array<std::array<char,9>, 6> &cube){
 void cubeScramble(std::array<std::array<char,9>, 6> &cube){
     //scrambles the cube by randomly picking one of 12 rotation functions.
     srand(time(nullptr));
-    for (int i = 0; i < 30; i++){
+    //srand(7);
+    for (int i = 0; i < 20; i++){
         int num = rand() % 12;
         if (num == 0){
             fCW(cube);

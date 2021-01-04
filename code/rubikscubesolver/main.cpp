@@ -1,5 +1,7 @@
 #include "createcube.h"
 #include "crosssolver.h"
+#include "f2lsolver.h"
+#include "rotations.h"
 
 /* Rotation Notation: Everything based on Front (White Side).
      * Cube needs to initially be in the correct orientation.
@@ -11,14 +13,29 @@
 
 int main(){
     //generating the cube.
-    std::array<std::array<char,9>,6> cube;
+    std::array<std::array<char,9>,6> cube{};
 
     originalState(cube);
 
     cubeScramble(cube);
     printCube(cube);
 
+    /*
+    while (crossCheck(cube)){
+        originalState(cube);
+        cubeScramble(cube);
+        printCube(cube);
+        solveCross(cube);
+        printCube(cube);
+        solveCorners(cube);
+        printCube(cube);
+    }
+    */
+
+
     solveCross(cube);
+    printCube(cube);
+    solveCorners(cube);
     printCube(cube);
 
     return 0;
