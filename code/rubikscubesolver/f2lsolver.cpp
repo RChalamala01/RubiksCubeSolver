@@ -409,3 +409,514 @@ void solveCorners(std::array<std::array<char,9>, 6> &cube) {
         }
     }
 }
+
+void solveLayerTwo(std::array<std::array<char,9>, 6> &cube){
+
+    //red green edge
+    for (int i = 0; i < 6; i++){
+        for (int j = 0; j < 9; j++){
+            if (cube[i][j] == 'R'){
+                if (findAdj(cube, i, j) == 'G'){
+                    if (i == 1 && j == 1){
+                        placeRed(cube, 0);
+                    }
+                    if (i == 1 && j == 3){
+                        bCW(cube);
+                        uCW(cube);
+                        bCCW(cube);
+                        uCCW(cube);
+                        bCCW(cube);
+                        lCCW(cube);
+                        bCW(cube);
+                        lCW(cube);
+                        bCW(cube);
+                        placeRed(cube, 0);
+                    }
+                    if (i == 1 && j == 5){
+                        continue;
+                    }
+                    if (i == 2 && j == 1){
+                        bCCW(cube);
+                        uCCW(cube);
+                        bCW(cube);
+                        uCW(cube);
+                        bCW(cube);
+                        rCW(cube);
+                        bCCW(cube);
+                        rCCW(cube);
+                        bCW(cube);
+                        bCW(cube);
+                        placeRed(cube, 1);
+                    }
+                    if (i == 2 && j == 5){
+                        bCW(cube);
+                        placeRed(cube, 0);
+                    }
+                    if (i == 2 && j == 7){
+                        bCW(cube);
+                        dCW(cube);
+                        bCCW(cube);
+                        dCCW(cube);
+                        bCCW(cube);
+                        rCCW(cube);
+                        bCW(cube);
+                        rCW(cube);
+                        bCW(cube);
+                        bCW(cube);
+                        placeRed(cube, 1);
+                    }
+                    if (i == 3 && j == 3){
+                        bCW(cube);
+                        lCW(cube);
+                        bCCW(cube);
+                        lCCW(cube);
+                        bCCW(cube);
+                        dCCW(cube);
+                        bCW(cube);
+                        dCW(cube);
+                        bCCW(cube);
+                        placeRed(cube, 1);
+                    }
+                    if (i == 3 && j == 5){
+                        bCW(cube);
+                        dCW(cube);
+                        bCCW(cube);
+                        dCCW(cube);
+                        bCCW(cube);
+                        rCCW(cube);
+                        bCW(cube);
+                        rCW(cube);
+                        bCCW(cube);
+                        placeRed(cube, 0);
+                    }
+
+                    if (i == 3 && j == 7){
+                        bCW(cube);
+                        bCW(cube);
+                        placeRed(cube, 0);
+                    }
+                    if (i == 4 && j == 1){
+                        bCW(cube);
+                        uCW(cube);
+                        bCCW(cube);
+                        uCCW(cube);
+                        bCCW(cube);
+                        lCCW(cube);
+                        bCW(cube);
+                        lCW(cube);
+                        placeRed(cube, 1);
+                    }
+                    if (i == 4 && j == 3){
+                        bCCW(cube);
+                        placeRed(cube, 0);
+                    }
+                    if (i == 4 && j == 7){
+                        bCW(cube);
+                        lCW(cube);
+                        bCCW(cube);
+                        lCCW(cube);
+                        bCCW(cube);
+                        dCCW(cube);
+                        bCW(cube);
+                        dCW(cube);
+                        placeRed(cube, 0);
+                    }
+                    if (i == 5 && j == 1){
+                        bCW(cube);
+                        placeRed(cube, 1);
+                    }
+                    if (i == 5 && j == 3){
+                        bCW(cube);
+                        bCW(cube);
+                        placeRed(cube, 1);
+                    }
+                    if (i == 5 && j == 5){
+                        placeRed(cube, 1);
+                    }
+                    if (i == 5 && j == 7){
+                        bCCW(cube);
+                        placeRed(cube, 1);
+                    }
+                }
+            }
+        }
+    }
+
+
+
+
+    //green orange edge
+    for (int i = 0; i < 6; i++) {
+        for (int j = 0; j < 9; j++) {
+            if (cube[i][j] == 'G') {
+                if (findAdj(cube, i, j) == 'O') {
+                    if (i == 1 && j == 1) {
+                        bCCW(cube);
+                        placeGreen(cube, 0);
+                    }
+                    if (i == 1 && j == 3) {
+                        bCW(cube);
+                        uCW(cube);
+                        bCCW(cube);
+                        uCCW(cube);
+                        bCCW(cube);
+                        lCCW(cube);
+                        bCW(cube);
+                        lCW(cube);
+                        placeGreen(cube, 0);
+                    }
+                    if (i == 1 && j == 5) {
+                        bCCW(cube);
+                        uCCW(cube);
+                        bCW(cube);
+                        uCW(cube);
+                        bCW(cube);
+                        rCW(cube);
+                        bCCW(cube);
+                        rCCW(cube);
+                        bCW(cube);
+                        bCW(cube);
+                        placeGreen(cube, 0);
+                    }
+                    if (i == 2 && j == 5) {
+                        placeGreen(cube, 0);
+                    }
+                    if (i == 2 && j == 7) {
+                        continue;
+                    }
+                    if (i == 3 && j == 3) {
+                        bCW(cube);
+                        lCW(cube);
+                        bCCW(cube);
+                        lCCW(cube);
+                        bCCW(cube);
+                        dCCW(cube);
+                        bCW(cube);
+                        dCW(cube);
+                        bCW(cube);
+                        bCW(cube);
+                        placeGreen(cube, 1);
+                    }
+                    if (i == 3 && j == 5) {
+                        bCW(cube);
+                        dCW(cube);
+                        bCCW(cube);
+                        dCCW(cube);
+                        bCCW(cube);
+                        rCCW(cube);
+                        bCW(cube);
+                        rCW(cube);
+                        bCW(cube);
+                        bCW(cube);
+                        placeGreen(cube, 0);
+                    }
+                    if (i == 3 && j == 7) {
+                        bCW(cube);
+                        placeGreen(cube, 0);
+                    }
+                    if (i == 4 && j == 1) {
+                        bCW(cube);
+                        uCW(cube);
+                        bCCW(cube);
+                        uCCW(cube);
+                        bCCW(cube);
+                        lCCW(cube);
+                        bCW(cube);
+                        lCW(cube);
+                        bCCW(cube);
+                        placeGreen(cube, 1);
+                    }
+                    if (i == 4 && j == 3) {
+                        bCW(cube);
+                        bCW(cube);
+                        placeGreen(cube, 0);
+                    }
+                    if (i == 4 && j == 7) {
+                        bCW(cube);
+                        lCW(cube);
+                        bCCW(cube);
+                        lCCW(cube);
+                        bCCW(cube);
+                        dCCW(cube);
+                        bCW(cube);
+                        dCW(cube);
+                        bCCW(cube);
+                        placeGreen(cube, 0);
+                    }
+
+                    if (i == 5 && j == 1) {
+                        placeGreen(cube, 1);
+                    }
+                    if (i == 5 && j == 3) {
+                        bCW(cube);
+                        placeGreen(cube, 1);
+                    }
+                    if (i == 5 && j == 5) {
+                        bCCW(cube);
+                        placeGreen(cube, 1);
+                    }
+                    if (i == 5 && j == 7) {
+                        bCW(cube);
+                        bCW(cube);
+                        placeGreen(cube, 1);
+                    }
+                }
+            }
+        }
+    }
+
+
+    //orange blue edge
+    for (int i = 0; i < 6; i++) {
+        for (int j = 0; j < 9; j++) {
+            if (cube[i][j] == 'O') {
+                if (findAdj(cube, i, j) == 'B') {
+                    if (i == 1 && j == 1) {
+                        bCW(cube);
+                        bCW(cube);
+                        placeOrange(cube, 0);
+                    }
+                    if (i == 1 && j == 3) {
+                        bCW(cube);
+                        uCW(cube);
+                        bCCW(cube);
+                        uCCW(cube);
+                        bCCW(cube);
+                        lCCW(cube);
+                        bCW(cube);
+                        lCW(cube);
+                        bCCW(cube);
+                        placeOrange(cube, 0);
+                    }
+                    if (i == 1 && j == 5) {
+                        bCCW(cube);
+                        uCCW(cube);
+                        bCW(cube);
+                        uCW(cube);
+                        bCW(cube);
+                        rCW(cube);
+                        bCCW(cube);
+                        rCCW(cube);
+                        bCW(cube);
+                        placeOrange(cube, 0);
+                    }
+                    if (i == 2 && j == 5) {
+                        bCCW(cube);
+                        placeOrange(cube, 0);
+                    }
+                    if (i == 3 && j == 3) {
+                        continue;
+                    }
+                    if (i == 3 && j == 7) {
+                        placeOrange(cube, 0);
+                    }
+                    if (i == 4 && j == 1) {
+                        bCW(cube);
+                        uCW(cube);
+                        bCCW(cube);
+                        uCCW(cube);
+                        bCCW(cube);
+                        lCCW(cube);
+                        bCW(cube);
+                        lCW(cube);
+                        bCW(cube);
+                        bCW(cube);
+                        placeOrange(cube, 1);
+                    }
+                    if (i == 4 && j == 3) {
+                        bCW(cube);
+                        placeOrange(cube, 0);
+                    }
+                    if (i == 4 && j == 7) {
+                        bCW(cube);
+                        lCW(cube);
+                        bCCW(cube);
+                        lCCW(cube);
+                        bCCW(cube);
+                        dCCW(cube);
+                        bCW(cube);
+                        dCW(cube);
+                        bCW(cube);
+                        bCW(cube);
+                        placeOrange(cube, 0);
+                    }
+                    if (i == 5 && j == 1) {
+                        bCCW(cube);
+                        placeOrange(cube, 1);
+                    }
+                    if (i == 5 && j == 3) {
+                        placeOrange(cube, 1);
+                    }
+                    if (i == 5 && j == 5) {
+                        bCW(cube);
+                        bCW(cube);
+                        placeOrange(cube, 1);
+                    }
+                    if (i == 5 && j == 7) {
+                        bCW(cube);
+                        placeOrange(cube, 1);
+                    }
+                }
+            }
+        }
+    }
+
+
+
+    //blue red edge
+    for (int i = 0; i < 6; i++) {
+        for (int j = 0; j < 9; j++) {
+            if (cube[i][j] == 'B') {
+                if (findAdj(cube, i, j) == 'R') {
+                    if (i == 1 && j == 1) {
+                        bCW(cube);
+                        placeBlue(cube, 0);
+                    }
+                    if (i == 1 && j == 3) {
+                        bCW(cube);
+                        uCW(cube);
+                        bCCW(cube);
+                        uCCW(cube);
+                        bCCW(cube);
+                        lCCW(cube);
+                        bCW(cube);
+                        lCW(cube);
+                        bCW(cube);
+                        bCW(cube);
+                        placeBlue(cube, 0);
+                    }
+                    if (i == 2 && j == 5) {
+                        bCW(cube);
+                        bCW(cube);
+                        placeBlue(cube, 0);
+                    }
+                    if (i == 3 && j == 7) {
+                        bCCW(cube);
+                        placeBlue(cube, 0);
+                    }
+                    if (i == 4 && j == 3) {
+                        placeBlue(cube, 0);
+                    }
+                    if (i == 5 && j == 1) {
+                        bCW(cube);
+                        bCW(cube);
+                        placeBlue(cube, 1);
+                    }
+                    if (i == 5 && j == 3) {
+                        bCCW(cube);
+                        placeBlue(cube, 1);
+                    }
+                    if (i == 5 && j == 5) {
+                        bCW(cube);
+                        placeBlue(cube, 1);
+                    }
+                    if (i == 5 && j == 7) {
+                        placeBlue(cube, 1);
+                    }
+                }
+            }
+        }
+    }
+
+
+}
+
+void placeRed(std::array<std::array<char,9>, 6> &cube, int i){
+    //when on red face.
+    if (i == 0){
+        bCW(cube);
+        rCW(cube);
+        bCCW(cube);
+        rCCW(cube);
+        bCCW(cube);
+        uCCW(cube);
+        bCW(cube);
+        uCW(cube);
+    }
+    //when on green face.
+    if (i == 1){
+        bCCW(cube);
+        uCCW(cube);
+        bCW(cube);
+        uCW(cube);
+        bCW(cube);
+        rCW(cube);
+        bCCW(cube);
+        rCCW(cube);
+    }
+}
+
+void placeGreen(std::array<std::array<char,9>, 6> &cube, int i){
+    //when on green face.
+    if (i == 0){
+        bCW(cube);
+        dCW(cube);
+        bCCW(cube);
+        dCCW(cube);
+        bCCW(cube);
+        rCCW(cube);
+        bCW(cube);
+        rCW(cube);
+    }
+    //when on orange face.
+    if (i == 1){
+        bCCW(cube);
+        rCCW(cube);
+        bCW(cube);
+        rCW(cube);
+        bCW(cube);
+        dCW(cube);
+        bCCW(cube);
+        dCCW(cube);
+    }
+}
+
+void placeOrange(std::array<std::array<char,9>, 6> &cube, int i){
+    //when on orange face.
+    if (i == 0){
+        bCW(cube);
+        lCW(cube);
+        bCCW(cube);
+        lCCW(cube);
+        bCCW(cube);
+        dCCW(cube);
+        bCW(cube);
+        dCW(cube);
+    }
+    //when on blue face.
+    if (i == 1){
+        bCCW(cube);
+        dCCW(cube);
+        bCW(cube);
+        dCW(cube);
+        bCW(cube);
+        lCW(cube);
+        bCCW(cube);
+        lCCW(cube);
+    }
+}
+
+void placeBlue(std::array<std::array<char,9>, 6> &cube, int i){
+    //when on blue face.
+    if (i == 0){
+        bCW(cube);
+        uCW(cube);
+        bCCW(cube);
+        uCCW(cube);
+        bCCW(cube);
+        lCCW(cube);
+        bCW(cube);
+        lCW(cube);
+    }
+    //when on red face.
+    if (i == 1){
+        bCCW(cube);
+        lCCW(cube);
+        bCW(cube);
+        lCW(cube);
+        bCW(cube);
+        uCW(cube);
+        bCCW(cube);
+        uCCW(cube);
+    }
+}

@@ -29,13 +29,18 @@ int main(){
         printCube(cube);
         solveCorners(cube);
         printCube(cube);
+        solveLayerTwo(cube);
+        printCube(cube);
     }
     */
+
 
 
     solveCross(cube);
     printCube(cube);
     solveCorners(cube);
+    printCube(cube);
+    solveLayerTwo(cube);
     printCube(cube);
 
     return 0;

@@ -128,18 +128,31 @@ bool crossCheck(std::array<std::array<char,9>, 6> &cube){
     if (cube[0][6] != 'W') return false;
     if (cube[0][7] != 'W') return false;
     if (cube[0][8] != 'W') return false;
-    if (cube[1][7] != 'R') return false;
-    if (cube[2][3] != 'G') return false;
-    if (cube[3][1] != 'O') return false;
-    if (cube[4][5] != 'B') return false;
+    if (cube[1][3] != 'R') return false;
+    if (cube[1][4] != 'R') return false;
+    if (cube[1][5] != 'R') return false;
     if (cube[1][6] != 'R') return false;
-    if (cube[4][2] != 'B') return false;
+    if (cube[1][7] != 'R') return false;
     if (cube[1][8] != 'R') return false;
     if (cube[2][0] != 'G') return false;
+    if (cube[2][1] != 'G') return false;
+    if (cube[2][3] != 'G') return false;
+    if (cube[2][4] != 'G') return false;
     if (cube[2][6] != 'G') return false;
-    if (cube[3][2] != 'O') return false;
+    if (cube[2][7] != 'G') return false;
     if (cube[3][0] != 'O') return false;
+    if (cube[3][1] != 'O') return false;
+    if (cube[3][2] != 'O') return false;
+    if (cube[3][3] != 'O') return false;
+    if (cube[3][4] != 'O') return false;
+    if (cube[3][5] != 'O') return false;
+    if (cube[4][1] != 'B') return false;
+    if (cube[4][2] != 'B') return false;
+    if (cube[4][4] != 'B') return false;
+    if (cube[4][5] != 'B') return false;
+    if (cube[4][7] != 'B') return false;
     if (cube[4][8] != 'B') return false;
+
     return true;
 }
 
