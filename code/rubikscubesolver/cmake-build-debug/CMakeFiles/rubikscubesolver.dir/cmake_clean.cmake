@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/rubikscubesolver.dir/f2lsolver.cpp.o"
   "CMakeFiles/rubikscubesolver.dir/main.cpp.o"
   "CMakeFiles/rubikscubesolver.dir/rotations.cpp.o"
+  "CMakeFiles/rubikscubesolver.dir/topsolver.cpp.o"
   "rubikscubesolver"
   "rubikscubesolver.pdb"
 )

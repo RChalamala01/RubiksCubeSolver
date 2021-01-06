@@ -278,6 +278,33 @@ rotations.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rubikscubesolver.dir/build.make CMakeFiles/rubikscubesolver.dir/rotations.cpp.s
 .PHONY : rotations.cpp.s
 
+topsolver.o: topsolver.cpp.o
+
+.PHONY : topsolver.o
+
+# target to build an object file
+topsolver.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rubikscubesolver.dir/build.make CMakeFiles/rubikscubesolver.dir/topsolver.cpp.o
+.PHONY : topsolver.cpp.o
+
+topsolver.i: topsolver.cpp.i
+
+.PHONY : topsolver.i
+
+# target to preprocess a source file
+topsolver.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rubikscubesolver.dir/build.make CMakeFiles/rubikscubesolver.dir/topsolver.cpp.i
+.PHONY : topsolver.cpp.i
+
+topsolver.s: topsolver.cpp.s
+
+.PHONY : topsolver.s
+
+# target to generate assembly for a file
+topsolver.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rubikscubesolver.dir/build.make CMakeFiles/rubikscubesolver.dir/topsolver.cpp.s
+.PHONY : topsolver.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -302,6 +329,9 @@ help:
 	@echo "... rotations.o"
 	@echo "... rotations.i"
 	@echo "... rotations.s"
+	@echo "... topsolver.o"
+	@echo "... topsolver.i"
+	@echo "... topsolver.s"
 .PHONY : help
 
 

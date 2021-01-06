@@ -2,6 +2,7 @@
 #include "crosssolver.h"
 #include "f2lsolver.h"
 #include "rotations.h"
+#include "topsolver.h"
 
 /* Rotation Notation: Everything based on Front (White Side).
      * Cube needs to initially be in the correct orientation.
@@ -17,9 +18,6 @@ int main(){
 
     originalState(cube);
 
-    cubeScramble(cube);
-    printCube(cube);
-
     /*
     while (crossCheck(cube)){
         originalState(cube);
@@ -31,17 +29,22 @@ int main(){
         printCube(cube);
         solveLayerTwo(cube);
         printCube(cube);
+        solveTopCross(cube);
+        printCube(cube);
     }
     */
 
-
-
+    cubeScramble(cube);
+    printCube(cube);
     solveCross(cube);
     printCube(cube);
     solveCorners(cube);
     printCube(cube);
     solveLayerTwo(cube);
     printCube(cube);
+    solveTopCross(cube);
+    printCube(cube);
+
 
     return 0;
 }

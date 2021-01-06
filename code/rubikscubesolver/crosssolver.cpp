@@ -152,6 +152,11 @@ bool crossCheck(std::array<std::array<char,9>, 6> &cube){
     if (cube[4][5] != 'B') return false;
     if (cube[4][7] != 'B') return false;
     if (cube[4][8] != 'B') return false;
+    if (cube[5][1] != 'Y') return false;
+    if (cube[5][3] != 'Y') return false;
+    if (cube[5][4] != 'Y') return false;
+    if (cube[5][5] != 'Y') return false;
+    if (cube[5][7] != 'Y') return false;
 
     return true;
 }
