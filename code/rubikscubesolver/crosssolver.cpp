@@ -117,7 +117,7 @@ char findAdj(std::array<std::array<char,9>, 6> &cube, int i, int j){
     }
 }
 
-bool crossCheck(std::array<std::array<char,9>, 6> &cube){
+bool cubeCheck(std::array<std::array<char,9>, 6> &cube){
     //checks if the white cross is complete.
     if (cube[0][0] != 'W') return false;
     if (cube[0][1] != 'W') return false;
@@ -128,35 +128,56 @@ bool crossCheck(std::array<std::array<char,9>, 6> &cube){
     if (cube[0][6] != 'W') return false;
     if (cube[0][7] != 'W') return false;
     if (cube[0][8] != 'W') return false;
+
+    if (cube[1][0] != 'R') return false;
+    if (cube[1][1] != 'R') return false;
+    if (cube[1][2] != 'R') return false;
     if (cube[1][3] != 'R') return false;
     if (cube[1][4] != 'R') return false;
     if (cube[1][5] != 'R') return false;
     if (cube[1][6] != 'R') return false;
     if (cube[1][7] != 'R') return false;
     if (cube[1][8] != 'R') return false;
+
     if (cube[2][0] != 'G') return false;
     if (cube[2][1] != 'G') return false;
+    if (cube[2][2] != 'G') return false;
     if (cube[2][3] != 'G') return false;
     if (cube[2][4] != 'G') return false;
+    if (cube[2][5] != 'G') return false;
     if (cube[2][6] != 'G') return false;
     if (cube[2][7] != 'G') return false;
+    if (cube[2][8] != 'G') return false;
+
     if (cube[3][0] != 'O') return false;
     if (cube[3][1] != 'O') return false;
     if (cube[3][2] != 'O') return false;
     if (cube[3][3] != 'O') return false;
     if (cube[3][4] != 'O') return false;
     if (cube[3][5] != 'O') return false;
+    if (cube[3][6] != 'O') return false;
+    if (cube[3][7] != 'O') return false;
+    if (cube[3][8] != 'O') return false;
+
+    if (cube[4][0] != 'B') return false;
     if (cube[4][1] != 'B') return false;
     if (cube[4][2] != 'B') return false;
+    if (cube[4][3] != 'B') return false;
     if (cube[4][4] != 'B') return false;
     if (cube[4][5] != 'B') return false;
+    if (cube[4][6] != 'B') return false;
     if (cube[4][7] != 'B') return false;
     if (cube[4][8] != 'B') return false;
+
+    if (cube[5][0] != 'Y') return false;
     if (cube[5][1] != 'Y') return false;
+    if (cube[5][2] != 'Y') return false;
     if (cube[5][3] != 'Y') return false;
     if (cube[5][4] != 'Y') return false;
     if (cube[5][5] != 'Y') return false;
+    if (cube[5][6] != 'Y') return false;
     if (cube[5][7] != 'Y') return false;
+    if (cube[5][8] != 'Y') return false;
 
     return true;
 }

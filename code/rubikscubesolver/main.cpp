@@ -12,14 +12,16 @@
      * To view yellow, rotate cube by 180 degrees up from white.
     */
 
+void solveCube(std::array<std::array<char,9>,6> &cube);
+
 int main(){
     //generating the cube.
-    std::array<std::array<char,9>,6> cube{};
+    std::array<std::array<char,9>,6> cube;
 
     originalState(cube);
 
-    /*
-    while (crossCheck(cube)){
+
+    while (cubeCheck(cube)){
         originalState(cube);
         cubeScramble(cube);
         printCube(cube);
@@ -31,20 +33,28 @@ int main(){
         printCube(cube);
         solveTopCross(cube);
         printCube(cube);
+        solveYellowEdges(cube);
+        printCube(cube);
+        solveTopCorners(cube);
+        printCube(cube);
     }
-    */
 
+    /*
     cubeScramble(cube);
     printCube(cube);
-    solveCross(cube);
-    printCube(cube);
-    solveCorners(cube);
-    printCube(cube);
-    solveLayerTwo(cube);
-    printCube(cube);
-    solveTopCross(cube);
-    printCube(cube);
 
+    solveCube(cube);
 
     return 0;
+    */
+}
+
+void solveCube(std::array<std::array<char,9>,6> &cube){
+    solveCross(cube);
+    solveCorners(cube);
+    solveLayerTwo(cube);
+    solveTopCross(cube);
+    solveYellowEdges(cube);
+    solveTopCorners(cube);
+    printCube(cube);
 }

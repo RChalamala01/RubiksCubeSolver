@@ -19,7 +19,13 @@ CMakeFiles/rubikscubesolver.dir/main.cpp.o: ../crosssolver.h
 CMakeFiles/rubikscubesolver.dir/main.cpp.o: ../f2lsolver.h
 CMakeFiles/rubikscubesolver.dir/main.cpp.o: ../main.cpp
 CMakeFiles/rubikscubesolver.dir/main.cpp.o: ../rotations.h
+CMakeFiles/rubikscubesolver.dir/main.cpp.o: ../topsolver.h
 
 CMakeFiles/rubikscubesolver.dir/rotations.cpp.o: ../rotations.cpp
 CMakeFiles/rubikscubesolver.dir/rotations.cpp.o: ../rotations.h
+
+CMakeFiles/rubikscubesolver.dir/topsolver.cpp.o: ../f2lsolver.h
+CMakeFiles/rubikscubesolver.dir/topsolver.cpp.o: ../rotations.h
+CMakeFiles/rubikscubesolver.dir/topsolver.cpp.o: ../topsolver.cpp
+CMakeFiles/rubikscubesolver.dir/topsolver.cpp.o: ../topsolver.h
 
