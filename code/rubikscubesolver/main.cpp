@@ -20,7 +20,7 @@ int main(){
 
     originalState(cube);
 
-
+    /*
     while (cubeCheck(cube)){
         originalState(cube);
         cubeScramble(cube);
@@ -37,24 +37,29 @@ int main(){
         printCube(cube);
         solveTopCorners(cube);
         printCube(cube);
-    }
+    }*/
 
-    /*
+
     cubeScramble(cube);
     printCube(cube);
 
     solveCube(cube);
 
     return 0;
-    */
+
 }
 
 void solveCube(std::array<std::array<char,9>,6> &cube){
     solveCross(cube);
+    printCube(cube);
     solveCorners(cube);
+    printCube(cube);
     solveLayerTwo(cube);
+    printCube(cube);
     solveTopCross(cube);
+    printCube(cube);
     solveYellowEdges(cube);
+    printCube(cube);
     solveTopCorners(cube);
     printCube(cube);
 }

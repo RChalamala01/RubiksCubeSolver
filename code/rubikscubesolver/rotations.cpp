@@ -157,6 +157,7 @@ void dCW(std::array<std::array<char,9>, 6> &cube){
 
     faceTurnCW(cube, 3);
     std::cout << "D ";
+
 }
 
 void dCCW(std::array<std::array<char,9>, 6> &cube){
