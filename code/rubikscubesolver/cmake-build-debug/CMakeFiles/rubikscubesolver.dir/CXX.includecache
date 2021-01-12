@@ -6,15 +6,31 @@
 
 #IncludeRegexTransform: 
 
-/Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/rotations.cpp
+/Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/createcube.h
+string
+-
 array
 -
+
+/Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/crosssolver.h
+
+/Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/f2lsolver.h
+
+/Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/main.cpp
+createcube.h
+/Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/createcube.h
+crosssolver.h
+/Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/crosssolver.h
+f2lsolver.h
+/Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/f2lsolver.h
 rotations.h
 /Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/rotations.h
-iostream
--
+topsolver.h
+/Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/topsolver.h
 
 /Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/rotations.h
 array
 -
+
+/Users/rohit/Documents/GitHub/RubiksCubeSolver/code/rubikscubesolver/topsolver.h
 

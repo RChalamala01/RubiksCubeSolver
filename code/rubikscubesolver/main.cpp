@@ -21,7 +21,7 @@ int main(){
     originalState(cube);
 
     /*
-    while (cubeCheck(cube)){
+    while (cubeCheck(cube)) {
         originalState(cube);
         cubeScramble(cube);
         printCube(cube);
@@ -37,7 +37,8 @@ int main(){
         printCube(cube);
         solveTopCorners(cube);
         printCube(cube);
-    }*/
+    }
+    */
 
 
     cubeScramble(cube);
