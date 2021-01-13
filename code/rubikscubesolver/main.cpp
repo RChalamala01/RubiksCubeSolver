@@ -3,6 +3,8 @@
 #include "f2lsolver.h"
 #include "rotations.h"
 #include "topsolver.h"
+#include <vector>
+#include <iostream>
 
 /* Rotation Notation: Everything based on Front (White Side).
      * Cube needs to initially be in the correct orientation.
@@ -12,55 +14,42 @@
      * To view yellow, rotate cube by 180 degrees up from white.
     */
 
-void solveCube(std::array<std::array<char,9>,6> &cube);
+void solveCube(std::array<std::array<char,9>,6> &cube, std::vector<std::string> &solveArray);
+void solutionFix(std::vector<std::string> &solveArray);
 
 int main(){
     //generating the cube.
     std::array<std::array<char,9>,6> cube;
+    std::vector<std::string> scrambleArray = {};
+    std::vector<std::string> solveArray = {};
 
     originalState(cube);
 
-    /*
-    while (cubeCheck(cube)) {
-        originalState(cube);
-        cubeScramble(cube);
-        printCube(cube);
-        solveCross(cube);
-        printCube(cube);
-        solveCorners(cube);
-        printCube(cube);
-        solveLayerTwo(cube);
-        printCube(cube);
-        solveTopCross(cube);
-        printCube(cube);
-        solveYellowEdges(cube);
-        printCube(cube);
-        solveTopCorners(cube);
-        printCube(cube);
-    }
-    */
-
-
-    cubeScramble(cube);
+    cubeScramble(cube,scrambleArray);
     printCube(cube);
 
-    solveCube(cube);
+    solveCube(cube, solveArray);
+
+    std::cout << solveArray.size();
+    solutionFix(solveArray);
 
     return 0;
 
 }
 
-void solveCube(std::array<std::array<char,9>,6> &cube){
-    solveCross(cube);
+void solveCube(std::array<std::array<char,9>,6> &cube, std::vector<std::string> &solveArray){
+    solveCross(cube, solveArray);
+    solveCorners(cube, solveArray);
+    solveLayerTwo(cube, solveArray);
+    solveTopCross(cube, solveArray);
+    solveYellowEdges(cube, solveArray);
+    solveTopCorners(cube, solveArray);
     printCube(cube);
-    solveCorners(cube);
-    printCube(cube);
-    solveLayerTwo(cube);
-    printCube(cube);
-    solveTopCross(cube);
-    printCube(cube);
-    solveYellowEdges(cube);
-    printCube(cube);
-    solveTopCorners(cube);
-    printCube(cube);
+}
+
+void solutionFix(std::vector<std::string> &solveArray){
+    std::vector<std::string> newArray = {};
+    for (int i = 0; i < solveArray.size(); i++){
+        break;
+    }
 }

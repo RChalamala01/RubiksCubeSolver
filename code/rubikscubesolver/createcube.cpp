@@ -59,47 +59,47 @@ void printCube(std::array<std::array<char,9>, 6> &cube){
     }
 }
 
-void cubeScramble(std::array<std::array<char,9>, 6> &cube){
+void cubeScramble(std::array<std::array<char,9>, 6> &cube, std::vector<std::string> &scrambleArray){
     //scrambles the cube by randomly picking one of 12 rotation functions.
     srand(time(nullptr));
-    //srand(7);
+    //srand(9);
     for (int i = 0; i < 20; i++){
         int num = rand() % 12;
         if (num == 0){
-            fCW(cube);
+            fCW(cube, scrambleArray);
         }
         else if (num == 1){
-            fCCW(cube);
+            fCCW(cube, scrambleArray);
         }
         else if (num == 2){
-            bCW(cube);
+            bCW(cube, scrambleArray);
         }
         else if (num == 3){
-            bCCW(cube);
+            bCCW(cube, scrambleArray);
         }
         else if (num == 4){
-            uCW(cube);
+            uCW(cube, scrambleArray);
         }
         else if (num == 5){
-            uCCW(cube);
+            uCCW(cube, scrambleArray);
         }
         else if (num == 6){
-            dCW(cube);
+            dCW(cube, scrambleArray);
         }
         else if (num == 7){
-            dCCW(cube);
+            dCCW(cube, scrambleArray);
         }
         else if (num == 8){
-            lCW(cube);
+            lCW(cube, scrambleArray);
         }
         else if (num == 9){
-            lCCW(cube);
+            lCCW(cube, scrambleArray);
         }
         else if (num == 10){
-            rCW(cube);
+            rCW(cube, scrambleArray);
         }
         else if (num == 11){
-            rCCW(cube);
+            rCCW(cube, scrambleArray);
         }
     }
     std::cout << "\n";

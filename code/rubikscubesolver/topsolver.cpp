@@ -5,26 +5,26 @@
 #include "f2lsolver.h"
 
 
-void solveTopCross(std::array<std::array<char,9>, 6> &cube){
+void solveTopCross(std::array<std::array<char,9>, 6> &cube, std::vector<std::string> &solveArray){
     while (topCrossSolve(cube) == 0){
         if (cube[5][1] == 'Y' && cube[5][3] == 'Y'){
-            crossAlgo(cube);
+            crossAlgo(cube, solveArray);
         }
         else if (cube[5][1] == 'Y' && cube[5][5] == 'Y'){
-            bCCW(cube);
-            crossAlgo(cube);
+            bCCW(cube, solveArray);
+            crossAlgo(cube, solveArray);
         }
         else if (cube[5][7] == 'Y' && cube[5][5] == 'Y'){
-            bCW(cube);
-            bCW(cube);
-            crossAlgo(cube);
+            bCW(cube, solveArray);
+            bCW(cube, solveArray);
+            crossAlgo(cube, solveArray);
         }
         else if (cube[5][7] == 'Y' && cube[5][3] == 'Y'){
-            bCW(cube);
-            crossAlgo(cube);
+            bCW(cube, solveArray);
+            crossAlgo(cube, solveArray);
         }
         else {
-            crossAlgo(cube);
+            crossAlgo(cube, solveArray);
         }
     }
 }
@@ -38,55 +38,55 @@ bool topCrossSolve(std::array<std::array<char,9>, 6> &cube){
     return true;
 }
 
-void crossAlgo(std::array<std::array<char,9>, 6> &cube){
-    uCW(cube);
-    bCW(cube);
-    rCW(cube);
-    bCCW(cube);
-    rCCW(cube);
-    uCCW(cube);
+void crossAlgo(std::array<std::array<char,9>, 6> &cube, std::vector<std::string> &solveArray){
+    uCW(cube, solveArray);
+    bCW(cube, solveArray);
+    rCW(cube, solveArray);
+    bCCW(cube, solveArray);
+    rCCW(cube, solveArray);
+    uCCW(cube, solveArray);
 }
 
 //for edges, get red to correct position, and then perform algo on green and then get red to correct and repeat till its correct.
 
-void solveYellowEdges(std::array<std::array<char,9>, 6> &cube){
+void solveYellowEdges(std::array<std::array<char,9>, 6> &cube, std::vector<std::string> &solveArray){
     while (cube[1][1] != 'R' || cube[2][5] != 'G' || cube[3][7] != 'O' || cube[4][3] != 'B'){
         if (cube[1][1] == 'R'){
             if (cube[2][5] == 'G'){
-                lCW(cube);
-                bCW(cube);
-                lCCW(cube);
-                bCW(cube);
-                lCW(cube);
-                bCW(cube);
-                bCW(cube);
-                lCCW(cube);
+                lCW(cube, solveArray);
+                bCW(cube, solveArray);
+                lCCW(cube, solveArray);
+                bCW(cube, solveArray);
+                lCW(cube, solveArray);
+                bCW(cube, solveArray);
+                bCW(cube, solveArray);
+                lCCW(cube, solveArray);
             }
             else {
-                dCW(cube);
-                bCW(cube);
-                dCCW(cube);
-                bCW(cube);
-                dCW(cube);
-                bCW(cube);
-                bCW(cube);
-                dCCW(cube);
+                dCW(cube, solveArray);
+                bCW(cube, solveArray);
+                dCCW(cube, solveArray);
+                bCW(cube, solveArray);
+                dCW(cube, solveArray);
+                bCW(cube, solveArray);
+                bCW(cube, solveArray);
+                dCCW(cube, solveArray);
             }
         }
         else if (cube[2][5] == 'R'){
-            bCW(cube);
+            bCW(cube, solveArray);
         }
         else if (cube[3][7] == 'R'){
-            bCW(cube);
-            bCW(cube);
+            bCW(cube, solveArray);
+            bCW(cube, solveArray);
         }
         else if (cube[4][3] == 'R'){
-            bCCW(cube);
+            bCCW(cube, solveArray);
         }
     }
 }
 
-void solveTopCorners(std::array<std::array<char,9>, 6> &cube){
+void solveTopCorners(std::array<std::array<char,9>, 6> &cube, std::vector<std::string> &solveArray){
 
     std::array<char,3> colorArrayGRY;
     std::array<char,3> colorArrayGOY;
@@ -108,45 +108,45 @@ void solveTopCorners(std::array<std::array<char,9>, 6> &cube){
     while (topCornerCheck(cube, colorArrayGRY, colorArrayGOY, colorArrayBOY, colorArrayBRY) == 0){
 
         if (colorArrayGRY[0] == 'G' && colorArrayGRY[1] == 'R' && colorArrayGRY[2] == 'Y'){
-            bCW(cube);
-            rCW(cube);
-            bCCW(cube);
-            lCCW(cube);
-            bCW(cube);
-            rCCW(cube);
-            bCCW(cube);
-            lCW(cube);
+            bCW(cube, solveArray);
+            rCW(cube, solveArray);
+            bCCW(cube, solveArray);
+            lCCW(cube, solveArray);
+            bCW(cube, solveArray);
+            rCCW(cube, solveArray);
+            bCCW(cube, solveArray);
+            lCW(cube, solveArray);
         }
         else if (colorArrayGOY[0] == 'G' && colorArrayGOY[1] == 'O' && colorArrayGOY[2] == 'Y'){
-            bCW(cube);
-            dCW(cube);
-            bCCW(cube);
-            uCCW(cube);
-            bCW(cube);
-            dCCW(cube);
-            bCCW(cube);
-            uCW(cube);
+            bCW(cube, solveArray);
+            dCW(cube, solveArray);
+            bCCW(cube, solveArray);
+            uCCW(cube, solveArray);
+            bCW(cube, solveArray);
+            dCCW(cube, solveArray);
+            bCCW(cube, solveArray);
+            uCW(cube, solveArray);
         }
         else if (colorArrayBOY[0] == 'B' && colorArrayBOY[1] == 'O' && colorArrayBOY[2] == 'Y'){
-            bCW(cube);
-            lCW(cube);
-            bCCW(cube);
-            rCCW(cube);
-            bCW(cube);
-            lCCW(cube);
-            bCCW(cube);
-            rCW(cube);
+            bCW(cube, solveArray);
+            lCW(cube, solveArray);
+            bCCW(cube, solveArray);
+            rCCW(cube, solveArray);
+            bCW(cube, solveArray);
+            lCCW(cube, solveArray);
+            bCCW(cube, solveArray);
+            rCW(cube, solveArray);
 
         }
         else {
-            bCW(cube);
-            uCW(cube);
-            bCCW(cube);
-            dCCW(cube);
-            bCW(cube);
-            uCCW(cube);
-            bCCW(cube);
-            dCW(cube);
+            bCW(cube, solveArray);
+            uCW(cube, solveArray);
+            bCCW(cube, solveArray);
+            dCCW(cube, solveArray);
+            bCW(cube, solveArray);
+            uCCW(cube, solveArray);
+            bCCW(cube, solveArray);
+            dCW(cube, solveArray);
         }
 
         cornerColors(cube, colorArrayGRY, 5, 8);
@@ -165,12 +165,12 @@ void solveTopCorners(std::array<std::array<char,9>, 6> &cube){
 
     for (int i = 0; i < 4; i++){
         while (cube[5][8] != 'Y'){
-            rCCW(cube);
-            fCCW(cube);
-            rCW(cube);
-            fCW(cube);
+            rCCW(cube, solveArray);
+            fCCW(cube, solveArray);
+            rCW(cube, solveArray);
+            fCW(cube, solveArray);
         }
-        bCW(cube);
+        bCW(cube, solveArray);
     }
 
 }

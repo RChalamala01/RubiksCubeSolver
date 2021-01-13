@@ -1,7 +1,5 @@
 #include <array>
-#include <iostream>
 #include <algorithm>
-
 #include "crosssolver.h"
 #include "f2lsolver.h"
 #include "rotations.h"
@@ -57,7 +55,7 @@ void cornerColors(std::array<std::array<char,9>, 6> &cube, std::array<char,3> &c
     }
 }
 
-void solveCorners(std::array<std::array<char,9>, 6> &cube) {
+void solveCorners(std::array<std::array<char,9>, 6> &cube, std::vector<std::string> &solveArray) {
     std::array<char, 3> colorArray;
 
     for (int i = 0; i < 6; i++) {
@@ -74,82 +72,82 @@ void solveCorners(std::array<std::array<char,9>, 6> &cube) {
 
                 if (((i == 0) && (j == 0)) || ((i == 1) && (j == 6)) || ((i == 4) && (j == 2))) {
                     while ((cube[0][0] != 'W') || (cube[1][6] != 'R') || (cube[4][2] != 'B')) {
-                        lCCW(cube);
-                        bCCW(cube);
-                        lCW(cube);
-                        bCW(cube);
+                        lCCW(cube, solveArray);
+                        bCCW(cube, solveArray);
+                        lCW(cube, solveArray);
+                        bCW(cube, solveArray);
                     }
                 }
                 if (((i == 0) && (j == 2)) || ((i == 1) && (j == 8)) || ((i == 2) && (j == 0))) {
-                    rCW(cube);
-                    bCW(cube);
-                    rCCW(cube);
+                    rCW(cube, solveArray);
+                    bCW(cube, solveArray);
+                    rCCW(cube, solveArray);
                     while ((cube[0][0] != 'W') || (cube[1][6] != 'R') || (cube[4][2] != 'B')) {
-                        lCCW(cube);
-                        bCCW(cube);
-                        lCW(cube);
-                        bCW(cube);
+                        lCCW(cube, solveArray);
+                        bCCW(cube, solveArray);
+                        lCW(cube, solveArray);
+                        bCW(cube, solveArray);
                     }
                 }
                 if (((i == 0) && (j == 8)) || ((i == 2) && (j == 6)) || ((i == 3) && (j == 2))) {
-                    rCCW(cube);
-                    bCW(cube);
-                    bCW(cube);
-                    rCW(cube);
+                    rCCW(cube, solveArray);
+                    bCW(cube, solveArray);
+                    bCW(cube, solveArray);
+                    rCW(cube, solveArray);
                     while ((cube[0][0] != 'W') || (cube[1][6] != 'R') || (cube[4][2] != 'B')) {
-                        lCCW(cube);
-                        bCCW(cube);
-                        lCW(cube);
-                        bCW(cube);
+                        lCCW(cube, solveArray);
+                        bCCW(cube, solveArray);
+                        lCW(cube, solveArray);
+                        bCW(cube, solveArray);
                     }
                 }
 
                 if (((i == 0) && (j == 6)) || ((i == 3) && (j == 0)) || ((i == 4) && (j == 8))) {
-                    dCCW(cube);
-                    bCCW(cube);
-                    dCW(cube);
+                    dCCW(cube, solveArray);
+                    bCCW(cube, solveArray);
+                    dCW(cube, solveArray);
                     while ((cube[0][0] != 'W') || (cube[1][6] != 'R') || (cube[4][2] != 'B')) {
-                        lCCW(cube);
-                        bCCW(cube);
-                        lCW(cube);
-                        bCW(cube);
+                        lCCW(cube, solveArray);
+                        bCCW(cube, solveArray);
+                        lCW(cube, solveArray);
+                        bCW(cube, solveArray);
                     }
                 }
                 if (((i == 1) && (j == 2)) || ((i == 2) && (j == 2)) || ((i == 5) && (j == 8))) {
-                    bCW(cube);
+                    bCW(cube, solveArray);
                     while ((cube[0][0] != 'W') || (cube[1][6] != 'R') || (cube[4][2] != 'B')) {
-                        lCCW(cube);
-                        bCCW(cube);
-                        lCW(cube);
-                        bCW(cube);
+                        lCCW(cube, solveArray);
+                        bCCW(cube, solveArray);
+                        lCW(cube, solveArray);
+                        bCW(cube, solveArray);
                     }
                 }
 
                 if (((i == 2) && (j == 8)) || ((i == 3) && (j == 8)) || ((i == 5) && (j == 2))) {
-                    bCW(cube);
-                    bCW(cube);
+                    bCW(cube, solveArray);
+                    bCW(cube, solveArray);
                     while ((cube[0][0] != 'W') || (cube[1][6] != 'R') || (cube[4][2] != 'B')) {
-                        lCCW(cube);
-                        bCCW(cube);
-                        lCW(cube);
-                        bCW(cube);
+                        lCCW(cube, solveArray);
+                        bCCW(cube, solveArray);
+                        lCW(cube, solveArray);
+                        bCW(cube, solveArray);
                     }
                 }
                 if (((i == 3) && (j == 6)) || ((i == 4) && (j == 6)) || ((i == 5) && (j == 0))) {
-                    bCCW(cube);
+                    bCCW(cube, solveArray);
                     while ((cube[0][0] != 'W') || (cube[1][6] != 'R') || (cube[4][2] != 'B')) {
-                        lCCW(cube);
-                        bCCW(cube);
-                        lCW(cube);
-                        bCW(cube);
+                        lCCW(cube, solveArray);
+                        bCCW(cube, solveArray);
+                        lCW(cube, solveArray);
+                        bCW(cube, solveArray);
                     }
                 }
                 if (((i == 1) && (j == 0)) || ((i == 4) && (j == 0)) || ((i == 5) && (j == 6))) {
                     while ((cube[0][0] != 'W') || (cube[1][6] != 'R') || (cube[4][2] != 'B')) {
-                        lCCW(cube);
-                        bCCW(cube);
-                        lCW(cube);
-                        bCW(cube);
+                        lCCW(cube, solveArray);
+                        bCCW(cube, solveArray);
+                        lCW(cube, solveArray);
+                        bCW(cube, solveArray);
                     }
                 }
             }
@@ -170,82 +168,82 @@ void solveCorners(std::array<std::array<char,9>, 6> &cube) {
             if ((colorArray[0] == 'G') && (colorArray[1] == 'R') && (colorArray[2] == 'W')) {
 
                 if (((i == 0) && (j == 0)) || ((i == 1) && (j == 6)) || ((i == 4) && (j == 2))) {
-                    lCCW(cube);
-                    bCCW(cube);
-                    lCW(cube);
+                    lCCW(cube, solveArray);
+                    bCCW(cube, solveArray);
+                    lCW(cube, solveArray);
                     while ((cube[0][2] != 'W') || (cube[1][8] != 'R') || (cube[2][0] != 'G')) {
-                        uCCW(cube);
-                        bCCW(cube);
-                        uCW(cube);
-                        bCW(cube);
+                        uCCW(cube, solveArray);
+                        bCCW(cube, solveArray);
+                        uCW(cube, solveArray);
+                        bCW(cube, solveArray);
                     }
                 }
                 if (((i == 0) && (j == 2)) || ((i == 1) && (j == 8)) || ((i == 2) && (j == 0))) {
                     while ((cube[0][2] != 'W') || (cube[1][8] != 'R') || (cube[2][0] != 'G')) {
-                        uCCW(cube);
-                        bCCW(cube);
-                        uCW(cube);
-                        bCW(cube);
+                        uCCW(cube, solveArray);
+                        bCCW(cube, solveArray);
+                        uCW(cube, solveArray);
+                        bCW(cube, solveArray);
                     }
                 }
                 if (((i == 0) && (j == 8)) || ((i == 2) && (j == 6)) || ((i == 3) && (j == 2))) {
-                    dCW(cube);
-                    bCW(cube);
-                    dCCW(cube);
+                    dCW(cube, solveArray);
+                    bCW(cube, solveArray);
+                    dCCW(cube, solveArray);
                     while ((cube[0][2] != 'W') || (cube[1][8] != 'R') || (cube[2][0] != 'G')) {
-                        uCCW(cube);
-                        bCCW(cube);
-                        uCW(cube);
-                        bCW(cube);
+                        uCCW(cube, solveArray);
+                        bCCW(cube, solveArray);
+                        uCW(cube, solveArray);
+                        bCW(cube, solveArray);
                     }
                 }
 
                 if (((i == 0) && (j == 6)) || ((i == 3) && (j == 0)) || ((i == 4) && (j == 8))) {
-                    lCW(cube);
-                    bCW(cube);
-                    bCW(cube);
-                    lCCW(cube);
+                    lCW(cube, solveArray);
+                    bCW(cube, solveArray);
+                    bCW(cube, solveArray);
+                    lCCW(cube, solveArray);
                     while ((cube[0][2] != 'W') || (cube[1][8] != 'R') || (cube[2][0] != 'G')) {
-                        uCCW(cube);
-                        bCCW(cube);
-                        uCW(cube);
-                        bCW(cube);
+                        uCCW(cube, solveArray);
+                        bCCW(cube, solveArray);
+                        uCW(cube, solveArray);
+                        bCW(cube, solveArray);
                     }
                 }
                 if (((i == 1) && (j == 2)) || ((i == 2) && (j == 2)) || ((i == 5) && (j == 8))) {
                     while ((cube[0][2] != 'W') || (cube[1][8] != 'R') || (cube[2][0] != 'G')) {
-                        uCCW(cube);
-                        bCCW(cube);
-                        uCW(cube);
-                        bCW(cube);
+                        uCCW(cube, solveArray);
+                        bCCW(cube, solveArray);
+                        uCW(cube, solveArray);
+                        bCW(cube, solveArray);
                     }
                 }
                 if (((i == 2) && (j == 8)) || ((i == 3) && (j == 8)) || ((i == 5) && (j == 2))) {
-                    bCW(cube);
+                    bCW(cube, solveArray);
                     while ((cube[0][2] != 'W') || (cube[1][8] != 'R') || (cube[2][0] != 'G')) {
-                        uCCW(cube);
-                        bCCW(cube);
-                        uCW(cube);
-                        bCW(cube);
+                        uCCW(cube, solveArray);
+                        bCCW(cube, solveArray);
+                        uCW(cube, solveArray);
+                        bCW(cube, solveArray);
                     }
                 }
                 if (((i == 3) && (j == 6)) || ((i == 4) && (j == 6)) || ((i == 5) && (j == 0))) {
-                    bCW(cube);
-                    bCW(cube);
+                    bCW(cube, solveArray);
+                    bCW(cube, solveArray);
                     while ((cube[0][2] != 'W') || (cube[1][8] != 'R') || (cube[2][0] != 'G')) {
-                        uCCW(cube);
-                        bCCW(cube);
-                        uCW(cube);
-                        bCW(cube);
+                        uCCW(cube, solveArray);
+                        bCCW(cube, solveArray);
+                        uCW(cube, solveArray);
+                        bCW(cube, solveArray);
                     }
                 }
                 if (((i == 1) && (j == 0)) || ((i == 4) && (j == 0)) || ((i == 5) && (j == 6))) {
-                    bCCW(cube);
+                    bCCW(cube, solveArray);
                     while ((cube[0][2] != 'W') || (cube[1][8] != 'R') || (cube[2][0] != 'G')) {
-                        uCCW(cube);
-                        bCCW(cube);
-                        uCW(cube);
-                        bCW(cube);
+                        uCCW(cube, solveArray);
+                        bCCW(cube, solveArray);
+                        uCW(cube, solveArray);
+                        bCW(cube, solveArray);
                     }
                 }
             }
@@ -266,82 +264,82 @@ void solveCorners(std::array<std::array<char,9>, 6> &cube) {
             if ((colorArray[0] == 'G') && (colorArray[1] == 'O') && (colorArray[2] == 'W')) {
 
                 if (((i == 0) && (j == 0)) || ((i == 1) && (j == 6)) || ((i == 4) && (j == 2))) {
-                    lCCW(cube);
-                    bCW(cube);
-                    bCW(cube);
-                    lCW(cube);
+                    lCCW(cube, solveArray);
+                    bCW(cube, solveArray);
+                    bCW(cube, solveArray);
+                    lCW(cube, solveArray);
                     while ((cube[0][8] != 'W') || (cube[2][6] != 'G') || (cube[3][2] != 'O')) {
-                        rCCW(cube);
-                        bCCW(cube);
-                        rCW(cube);
-                        bCW(cube);
+                        rCCW(cube, solveArray);
+                        bCCW(cube, solveArray);
+                        rCW(cube, solveArray);
+                        bCW(cube, solveArray);
                     }
                 }
                 if (((i == 0) && (j == 2)) || ((i == 1) && (j == 8)) || ((i == 2) && (j == 0))) {
-                    uCCW(cube);
-                    bCCW(cube);
-                    uCW(cube);
+                    uCCW(cube, solveArray);
+                    bCCW(cube, solveArray);
+                    uCW(cube, solveArray);
                     while ((cube[0][8] != 'W') || (cube[2][6] != 'G') || (cube[3][2] != 'O')) {
-                        rCCW(cube);
-                        bCCW(cube);
-                        rCW(cube);
-                        bCW(cube);
+                        rCCW(cube, solveArray);
+                        bCCW(cube, solveArray);
+                        rCW(cube, solveArray);
+                        bCW(cube, solveArray);
                     }
                 }
                 if (((i == 0) && (j == 8)) || ((i == 2) && (j == 6)) || ((i == 3) && (j == 2))) {
                     while ((cube[0][8] != 'W') || (cube[2][6] != 'G') || (cube[3][2] != 'O')) {
-                        rCCW(cube);
-                        bCCW(cube);
-                        rCW(cube);
-                        bCW(cube);
+                        rCCW(cube, solveArray);
+                        bCCW(cube, solveArray);
+                        rCW(cube, solveArray);
+                        bCW(cube, solveArray);
                     }
                 }
 
                 if (((i == 0) && (j == 6)) || ((i == 3) && (j == 0)) || ((i == 4) && (j == 8))) {
-                    lCW(cube);
-                    bCW(cube);
-                    lCCW(cube);
+                    lCW(cube, solveArray);
+                    bCW(cube, solveArray);
+                    lCCW(cube, solveArray);
                     while ((cube[0][8] != 'W') || (cube[2][6] != 'G') || (cube[3][2] != 'O')) {
-                        rCCW(cube);
-                        bCCW(cube);
-                        rCW(cube);
-                        bCW(cube);
+                        rCCW(cube, solveArray);
+                        bCCW(cube, solveArray);
+                        rCW(cube, solveArray);
+                        bCW(cube, solveArray);
                     }
                 }
                 if (((i == 1) && (j == 2)) || ((i == 2) && (j == 2)) || ((i == 5) && (j == 8))) {
-                    bCCW(cube);
+                    bCCW(cube, solveArray);
                     while ((cube[0][8] != 'W') || (cube[2][6] != 'G') || (cube[3][2] != 'O')) {
-                        rCCW(cube);
-                        bCCW(cube);
-                        rCW(cube);
-                        bCW(cube);
+                        rCCW(cube, solveArray);
+                        bCCW(cube, solveArray);
+                        rCW(cube, solveArray);
+                        bCW(cube, solveArray);
                     }
                 }
                 if (((i == 2) && (j == 8)) || ((i == 3) && (j == 8)) || ((i == 5) && (j == 2))) {
                     while ((cube[0][8] != 'W') || (cube[2][6] != 'G') || (cube[3][2] != 'O')) {
-                        rCCW(cube);
-                        bCCW(cube);
-                        rCW(cube);
-                        bCW(cube);
+                        rCCW(cube, solveArray);
+                        bCCW(cube, solveArray);
+                        rCW(cube, solveArray);
+                        bCW(cube, solveArray);
                     }
                 }
                 if (((i == 3) && (j == 6)) || ((i == 4) && (j == 6)) || ((i == 5) && (j == 0))) {
-                    bCW(cube);
+                    bCW(cube, solveArray);
                     while ((cube[0][8] != 'W') || (cube[2][6] != 'G') || (cube[3][2] != 'O')) {
-                        rCCW(cube);
-                        bCCW(cube);
-                        rCW(cube);
-                        bCW(cube);
+                        rCCW(cube, solveArray);
+                        bCCW(cube, solveArray);
+                        rCW(cube, solveArray);
+                        bCW(cube, solveArray);
                     }
                 }
                 if (((i == 1) && (j == 0)) || ((i == 4) && (j == 0)) || ((i == 5) && (j == 6))) {
-                    bCW(cube);
-                    bCW(cube);
+                    bCW(cube, solveArray);
+                    bCW(cube, solveArray);
                     while ((cube[0][8] != 'W') || (cube[2][6] != 'G') || (cube[3][2] != 'O')) {
-                        rCCW(cube);
-                        bCCW(cube);
-                        rCW(cube);
-                        bCW(cube);
+                        rCCW(cube, solveArray);
+                        bCCW(cube, solveArray);
+                        rCW(cube, solveArray);
+                        bCW(cube, solveArray);
                     }
                 }
             }
@@ -363,46 +361,46 @@ void solveCorners(std::array<std::array<char,9>, 6> &cube) {
 
                 if (((i == 0) && (j == 6)) || ((i == 3) && (j == 0)) || ((i == 4) && (j == 8))) {
                     while ((cube[0][6] != 'W') || (cube[3][0] != 'O') || (cube[4][8] != 'B')) {
-                        dCCW(cube);
-                        bCCW(cube);
-                        dCW(cube);
-                        bCW(cube);
+                        dCCW(cube, solveArray);
+                        bCCW(cube, solveArray);
+                        dCW(cube, solveArray);
+                        bCW(cube, solveArray);
                     }
                 }
                 if (((i == 1) && (j == 2)) || ((i == 2) && (j == 2)) || ((i == 5) && (j == 8))) {
-                    bCW(cube);
-                    bCW(cube);
+                    bCW(cube, solveArray);
+                    bCW(cube, solveArray);
                     while ((cube[0][6] != 'W') || (cube[3][0] != 'O') || (cube[4][8] != 'B')) {
-                        dCCW(cube);
-                        bCCW(cube);
-                        dCW(cube);
-                        bCW(cube);
+                        dCCW(cube, solveArray);
+                        bCCW(cube, solveArray);
+                        dCW(cube, solveArray);
+                        bCW(cube, solveArray);
                     }
                 }
                 if (((i == 2) && (j == 8)) || ((i == 3) && (j == 8)) || ((i == 5) && (j == 2))) {
-                    bCCW(cube);
+                    bCCW(cube, solveArray);
                     while ((cube[0][6] != 'W') || (cube[3][0] != 'O') || (cube[4][8] != 'B')) {
-                        dCCW(cube);
-                        bCCW(cube);
-                        dCW(cube);
-                        bCW(cube);
+                        dCCW(cube, solveArray);
+                        bCCW(cube, solveArray);
+                        dCW(cube, solveArray);
+                        bCW(cube, solveArray);
                     }
                 }
                 if (((i == 3) && (j == 6)) || ((i == 4) && (j == 6)) || ((i == 5) && (j == 0))) {
                     while ((cube[0][6] != 'W') || (cube[3][0] != 'O') || (cube[4][8] != 'B')) {
-                        dCCW(cube);
-                        bCCW(cube);
-                        dCW(cube);
-                        bCW(cube);
+                        dCCW(cube, solveArray);
+                        bCCW(cube, solveArray);
+                        dCW(cube, solveArray);
+                        bCW(cube, solveArray);
                     }
                 }
                 if (((i == 1) && (j == 0)) || ((i == 4) && (j == 0)) || ((i == 5) && (j == 6))) {
-                    bCW(cube);
+                    bCW(cube, solveArray);
                     while ((cube[0][6] != 'W') || (cube[3][0] != 'O') || (cube[4][8] != 'B')) {
-                        dCCW(cube);
-                        bCCW(cube);
-                        dCW(cube);
-                        bCW(cube);
+                        dCCW(cube, solveArray);
+                        bCCW(cube, solveArray);
+                        dCW(cube, solveArray);
+                        bCW(cube, solveArray);
                     }
                 }
             }
@@ -410,7 +408,7 @@ void solveCorners(std::array<std::array<char,9>, 6> &cube) {
     }
 }
 
-void solveLayerTwo(std::array<std::array<char,9>, 6> &cube){
+void solveLayerTwo(std::array<std::array<char,9>, 6> &cube, std::vector<std::string> &solveArray){
 
     //red green edge
     for (int i = 0; i < 6; i++){
@@ -418,124 +416,124 @@ void solveLayerTwo(std::array<std::array<char,9>, 6> &cube){
             if (cube[i][j] == 'R'){
                 if (findAdj(cube, i, j) == 'G'){
                     if (i == 1 && j == 1){
-                        placeRed(cube, 0);
+                        placeRed(cube, 0, solveArray);
                     }
                     if (i == 1 && j == 3){
-                        bCW(cube);
-                        uCW(cube);
-                        bCCW(cube);
-                        uCCW(cube);
-                        bCCW(cube);
-                        lCCW(cube);
-                        bCW(cube);
-                        lCW(cube);
-                        bCW(cube);
-                        placeRed(cube, 0);
+                        bCW(cube, solveArray);
+                        uCW(cube, solveArray);
+                        bCCW(cube, solveArray);
+                        uCCW(cube, solveArray);
+                        bCCW(cube, solveArray);
+                        lCCW(cube, solveArray);
+                        bCW(cube, solveArray);
+                        lCW(cube, solveArray);
+                        bCW(cube, solveArray);
+                        placeRed(cube, 0, solveArray);
                     }
                     if (i == 1 && j == 5){
                         continue;
                     }
                     if (i == 2 && j == 1){
-                        bCCW(cube);
-                        uCCW(cube);
-                        bCW(cube);
-                        uCW(cube);
-                        bCW(cube);
-                        rCW(cube);
-                        bCCW(cube);
-                        rCCW(cube);
-                        bCW(cube);
-                        bCW(cube);
-                        placeRed(cube, 1);
+                        bCCW(cube, solveArray);
+                        uCCW(cube, solveArray);
+                        bCW(cube, solveArray);
+                        uCW(cube, solveArray);
+                        bCW(cube, solveArray);
+                        rCW(cube, solveArray);
+                        bCCW(cube, solveArray);
+                        rCCW(cube, solveArray);
+                        bCW(cube, solveArray);
+                        bCW(cube, solveArray);
+                        placeRed(cube, 1, solveArray);
                     }
                     if (i == 2 && j == 5){
-                        bCW(cube);
-                        placeRed(cube, 0);
+                        bCW(cube, solveArray);
+                        placeRed(cube, 0, solveArray);
                     }
                     if (i == 2 && j == 7){
-                        bCW(cube);
-                        dCW(cube);
-                        bCCW(cube);
-                        dCCW(cube);
-                        bCCW(cube);
-                        rCCW(cube);
-                        bCW(cube);
-                        rCW(cube);
-                        bCW(cube);
-                        bCW(cube);
-                        placeRed(cube, 1);
+                        bCW(cube, solveArray);
+                        dCW(cube, solveArray);
+                        bCCW(cube, solveArray);
+                        dCCW(cube, solveArray);
+                        bCCW(cube, solveArray);
+                        rCCW(cube, solveArray);
+                        bCW(cube, solveArray);
+                        rCW(cube, solveArray);
+                        bCW(cube, solveArray);
+                        bCW(cube, solveArray);
+                        placeRed(cube, 1, solveArray);
                     }
                     if (i == 3 && j == 3){
-                        bCW(cube);
-                        lCW(cube);
-                        bCCW(cube);
-                        lCCW(cube);
-                        bCCW(cube);
-                        dCCW(cube);
-                        bCW(cube);
-                        dCW(cube);
-                        bCCW(cube);
-                        placeRed(cube, 1);
+                        bCW(cube, solveArray);
+                        lCW(cube, solveArray);
+                        bCCW(cube, solveArray);
+                        lCCW(cube, solveArray);
+                        bCCW(cube, solveArray);
+                        dCCW(cube, solveArray);
+                        bCW(cube, solveArray);
+                        dCW(cube, solveArray);
+                        bCCW(cube, solveArray);
+                        placeRed(cube, 1, solveArray);
                     }
                     if (i == 3 && j == 5){
-                        bCW(cube);
-                        dCW(cube);
-                        bCCW(cube);
-                        dCCW(cube);
-                        bCCW(cube);
-                        rCCW(cube);
-                        bCW(cube);
-                        rCW(cube);
-                        bCCW(cube);
-                        placeRed(cube, 0);
+                        bCW(cube, solveArray);
+                        dCW(cube, solveArray);
+                        bCCW(cube, solveArray);
+                        dCCW(cube, solveArray);
+                        bCCW(cube, solveArray);
+                        rCCW(cube, solveArray);
+                        bCW(cube, solveArray);
+                        rCW(cube, solveArray);
+                        bCCW(cube, solveArray);
+                        placeRed(cube, 0, solveArray);
                     }
 
                     if (i == 3 && j == 7){
-                        bCW(cube);
-                        bCW(cube);
-                        placeRed(cube, 0);
+                        bCW(cube, solveArray);
+                        bCW(cube, solveArray);
+                        placeRed(cube, 0, solveArray);
                     }
                     if (i == 4 && j == 1){
-                        bCW(cube);
-                        uCW(cube);
-                        bCCW(cube);
-                        uCCW(cube);
-                        bCCW(cube);
-                        lCCW(cube);
-                        bCW(cube);
-                        lCW(cube);
-                        placeRed(cube, 1);
+                        bCW(cube, solveArray);
+                        uCW(cube, solveArray);
+                        bCCW(cube, solveArray);
+                        uCCW(cube, solveArray);
+                        bCCW(cube, solveArray);
+                        lCCW(cube, solveArray);
+                        bCW(cube, solveArray);
+                        lCW(cube, solveArray);
+                        placeRed(cube, 1, solveArray);
                     }
                     if (i == 4 && j == 3){
-                        bCCW(cube);
-                        placeRed(cube, 0);
+                        bCCW(cube, solveArray);
+                        placeRed(cube, 0, solveArray);
                     }
                     if (i == 4 && j == 7){
-                        bCW(cube);
-                        lCW(cube);
-                        bCCW(cube);
-                        lCCW(cube);
-                        bCCW(cube);
-                        dCCW(cube);
-                        bCW(cube);
-                        dCW(cube);
-                        placeRed(cube, 0);
+                        bCW(cube, solveArray);
+                        lCW(cube, solveArray);
+                        bCCW(cube, solveArray);
+                        lCCW(cube, solveArray);
+                        bCCW(cube, solveArray);
+                        dCCW(cube, solveArray);
+                        bCW(cube, solveArray);
+                        dCW(cube, solveArray);
+                        placeRed(cube, 0, solveArray);
                     }
                     if (i == 5 && j == 1){
-                        bCW(cube);
-                        placeRed(cube, 1);
+                        bCW(cube, solveArray);
+                        placeRed(cube, 1, solveArray);
                     }
                     if (i == 5 && j == 3){
-                        bCW(cube);
-                        bCW(cube);
-                        placeRed(cube, 1);
+                        bCW(cube, solveArray);
+                        bCW(cube, solveArray);
+                        placeRed(cube, 1, solveArray);
                     }
                     if (i == 5 && j == 5){
-                        placeRed(cube, 1);
+                        placeRed(cube, 1, solveArray);
                     }
                     if (i == 5 && j == 7){
-                        bCCW(cube);
-                        placeRed(cube, 1);
+                        bCCW(cube, solveArray);
+                        placeRed(cube, 1, solveArray);
                     }
                 }
             }
@@ -551,114 +549,114 @@ void solveLayerTwo(std::array<std::array<char,9>, 6> &cube){
             if (cube[i][j] == 'G') {
                 if (findAdj(cube, i, j) == 'O') {
                     if (i == 1 && j == 1) {
-                        bCCW(cube);
-                        placeGreen(cube, 0);
+                        bCCW(cube, solveArray);
+                        placeGreen(cube, 0, solveArray);
                     }
                     if (i == 1 && j == 3) {
-                        bCW(cube);
-                        uCW(cube);
-                        bCCW(cube);
-                        uCCW(cube);
-                        bCCW(cube);
-                        lCCW(cube);
-                        bCW(cube);
-                        lCW(cube);
-                        placeGreen(cube, 0);
+                        bCW(cube, solveArray);
+                        uCW(cube, solveArray);
+                        bCCW(cube, solveArray);
+                        uCCW(cube, solveArray);
+                        bCCW(cube, solveArray);
+                        lCCW(cube, solveArray);
+                        bCW(cube, solveArray);
+                        lCW(cube, solveArray);
+                        placeGreen(cube, 0, solveArray);
                     }
                     if (i == 1 && j == 5) {
-                        bCCW(cube);
-                        uCCW(cube);
-                        bCW(cube);
-                        uCW(cube);
-                        bCW(cube);
-                        rCW(cube);
-                        bCCW(cube);
-                        rCCW(cube);
-                        bCW(cube);
-                        bCW(cube);
-                        placeGreen(cube, 0);
+                        bCCW(cube, solveArray);
+                        uCCW(cube, solveArray);
+                        bCW(cube, solveArray);
+                        uCW(cube, solveArray);
+                        bCW(cube, solveArray);
+                        rCW(cube, solveArray);
+                        bCCW(cube, solveArray);
+                        rCCW(cube, solveArray);
+                        bCW(cube, solveArray);
+                        bCW(cube, solveArray);
+                        placeGreen(cube, 0, solveArray);
                     }
                     if (i == 2 && j == 5) {
-                        placeGreen(cube, 0);
+                        placeGreen(cube, 0, solveArray);
                     }
                     if (i == 2 && j == 7) {
                         continue;
                     }
                     if (i == 3 && j == 3) {
-                        bCW(cube);
-                        lCW(cube);
-                        bCCW(cube);
-                        lCCW(cube);
-                        bCCW(cube);
-                        dCCW(cube);
-                        bCW(cube);
-                        dCW(cube);
-                        bCW(cube);
-                        bCW(cube);
-                        placeGreen(cube, 1);
+                        bCW(cube, solveArray);
+                        lCW(cube, solveArray);
+                        bCCW(cube, solveArray);
+                        lCCW(cube, solveArray);
+                        bCCW(cube, solveArray);
+                        dCCW(cube, solveArray);
+                        bCW(cube, solveArray);
+                        dCW(cube, solveArray);
+                        bCW(cube, solveArray);
+                        bCW(cube, solveArray);
+                        placeGreen(cube, 1, solveArray);
                     }
                     if (i == 3 && j == 5) {
-                        bCW(cube);
-                        dCW(cube);
-                        bCCW(cube);
-                        dCCW(cube);
-                        bCCW(cube);
-                        rCCW(cube);
-                        bCW(cube);
-                        rCW(cube);
-                        bCW(cube);
-                        bCW(cube);
-                        placeGreen(cube, 0);
+                        bCW(cube, solveArray);
+                        dCW(cube, solveArray);
+                        bCCW(cube, solveArray);
+                        dCCW(cube, solveArray);
+                        bCCW(cube, solveArray);
+                        rCCW(cube, solveArray);
+                        bCW(cube, solveArray);
+                        rCW(cube, solveArray);
+                        bCW(cube, solveArray);
+                        bCW(cube, solveArray);
+                        placeGreen(cube, 0, solveArray);
                     }
                     if (i == 3 && j == 7) {
-                        bCW(cube);
-                        placeGreen(cube, 0);
+                        bCW(cube, solveArray);
+                        placeGreen(cube, 0, solveArray);
                     }
                     if (i == 4 && j == 1) {
-                        bCW(cube);
-                        uCW(cube);
-                        bCCW(cube);
-                        uCCW(cube);
-                        bCCW(cube);
-                        lCCW(cube);
-                        bCW(cube);
-                        lCW(cube);
-                        bCCW(cube);
-                        placeGreen(cube, 1);
+                        bCW(cube, solveArray);
+                        uCW(cube, solveArray);
+                        bCCW(cube, solveArray);
+                        uCCW(cube, solveArray);
+                        bCCW(cube, solveArray);
+                        lCCW(cube, solveArray);
+                        bCW(cube, solveArray);
+                        lCW(cube, solveArray);
+                        bCCW(cube, solveArray);
+                        placeGreen(cube, 1, solveArray);
                     }
                     if (i == 4 && j == 3) {
-                        bCW(cube);
-                        bCW(cube);
-                        placeGreen(cube, 0);
+                        bCW(cube, solveArray);
+                        bCW(cube, solveArray);
+                        placeGreen(cube, 0, solveArray);
                     }
                     if (i == 4 && j == 7) {
-                        bCW(cube);
-                        lCW(cube);
-                        bCCW(cube);
-                        lCCW(cube);
-                        bCCW(cube);
-                        dCCW(cube);
-                        bCW(cube);
-                        dCW(cube);
-                        bCCW(cube);
-                        placeGreen(cube, 0);
+                        bCW(cube, solveArray);
+                        lCW(cube, solveArray);
+                        bCCW(cube, solveArray);
+                        lCCW(cube, solveArray);
+                        bCCW(cube, solveArray);
+                        dCCW(cube, solveArray);
+                        bCW(cube, solveArray);
+                        dCW(cube, solveArray);
+                        bCCW(cube, solveArray);
+                        placeGreen(cube, 0, solveArray);
                     }
 
                     if (i == 5 && j == 1) {
-                        placeGreen(cube, 1);
+                        placeGreen(cube, 1, solveArray);
                     }
                     if (i == 5 && j == 3) {
-                        bCW(cube);
-                        placeGreen(cube, 1);
+                        bCW(cube, solveArray);
+                        placeGreen(cube, 1, solveArray);
                     }
                     if (i == 5 && j == 5) {
-                        bCCW(cube);
-                        placeGreen(cube, 1);
+                        bCCW(cube, solveArray);
+                        placeGreen(cube, 1, solveArray);
                     }
                     if (i == 5 && j == 7) {
-                        bCW(cube);
-                        bCW(cube);
-                        placeGreen(cube, 1);
+                        bCW(cube, solveArray);
+                        bCW(cube, solveArray);
+                        placeGreen(cube, 1, solveArray);
                     }
                 }
             }
@@ -672,89 +670,89 @@ void solveLayerTwo(std::array<std::array<char,9>, 6> &cube){
             if (cube[i][j] == 'O') {
                 if (findAdj(cube, i, j) == 'B') {
                     if (i == 1 && j == 1) {
-                        bCW(cube);
-                        bCW(cube);
-                        placeOrange(cube, 0);
+                        bCW(cube, solveArray);
+                        bCW(cube, solveArray);
+                        placeOrange(cube, 0, solveArray);
                     }
                     if (i == 1 && j == 3) {
-                        bCW(cube);
-                        uCW(cube);
-                        bCCW(cube);
-                        uCCW(cube);
-                        bCCW(cube);
-                        lCCW(cube);
-                        bCW(cube);
-                        lCW(cube);
-                        bCCW(cube);
-                        placeOrange(cube, 0);
+                        bCW(cube, solveArray);
+                        uCW(cube, solveArray);
+                        bCCW(cube, solveArray);
+                        uCCW(cube, solveArray);
+                        bCCW(cube, solveArray);
+                        lCCW(cube, solveArray);
+                        bCW(cube, solveArray);
+                        lCW(cube, solveArray);
+                        bCCW(cube, solveArray);
+                        placeOrange(cube, 0, solveArray);
                     }
                     if (i == 1 && j == 5) {
-                        bCCW(cube);
-                        uCCW(cube);
-                        bCW(cube);
-                        uCW(cube);
-                        bCW(cube);
-                        rCW(cube);
-                        bCCW(cube);
-                        rCCW(cube);
-                        bCW(cube);
-                        placeOrange(cube, 0);
+                        bCCW(cube, solveArray);
+                        uCCW(cube, solveArray);
+                        bCW(cube, solveArray);
+                        uCW(cube, solveArray);
+                        bCW(cube, solveArray);
+                        rCW(cube, solveArray);
+                        bCCW(cube, solveArray);
+                        rCCW(cube, solveArray);
+                        bCW(cube, solveArray);
+                        placeOrange(cube, 0, solveArray);
                     }
                     if (i == 2 && j == 5) {
-                        bCCW(cube);
-                        placeOrange(cube, 0);
+                        bCCW(cube, solveArray);
+                        placeOrange(cube, 0, solveArray);
                     }
                     if (i == 3 && j == 3) {
                         continue;
                     }
                     if (i == 3 && j == 7) {
-                        placeOrange(cube, 0);
+                        placeOrange(cube, 0, solveArray);
                     }
                     if (i == 4 && j == 1) {
-                        bCW(cube);
-                        uCW(cube);
-                        bCCW(cube);
-                        uCCW(cube);
-                        bCCW(cube);
-                        lCCW(cube);
-                        bCW(cube);
-                        lCW(cube);
-                        bCW(cube);
-                        bCW(cube);
-                        placeOrange(cube, 1);
+                        bCW(cube, solveArray);
+                        uCW(cube, solveArray);
+                        bCCW(cube, solveArray);
+                        uCCW(cube, solveArray);
+                        bCCW(cube, solveArray);
+                        lCCW(cube, solveArray);
+                        bCW(cube, solveArray);
+                        lCW(cube, solveArray);
+                        bCW(cube, solveArray);
+                        bCW(cube, solveArray);
+                        placeOrange(cube, 1, solveArray);
                     }
                     if (i == 4 && j == 3) {
-                        bCW(cube);
-                        placeOrange(cube, 0);
+                        bCW(cube, solveArray);
+                        placeOrange(cube, 0, solveArray);
                     }
                     if (i == 4 && j == 7) {
-                        bCW(cube);
-                        lCW(cube);
-                        bCCW(cube);
-                        lCCW(cube);
-                        bCCW(cube);
-                        dCCW(cube);
-                        bCW(cube);
-                        dCW(cube);
-                        bCW(cube);
-                        bCW(cube);
-                        placeOrange(cube, 0);
+                        bCW(cube, solveArray);
+                        lCW(cube, solveArray);
+                        bCCW(cube, solveArray);
+                        lCCW(cube, solveArray);
+                        bCCW(cube, solveArray);
+                        dCCW(cube, solveArray);
+                        bCW(cube, solveArray);
+                        dCW(cube, solveArray);
+                        bCW(cube, solveArray);
+                        bCW(cube, solveArray);
+                        placeOrange(cube, 0, solveArray);
                     }
                     if (i == 5 && j == 1) {
-                        bCCW(cube);
-                        placeOrange(cube, 1);
+                        bCCW(cube, solveArray);
+                        placeOrange(cube, 1, solveArray);
                     }
                     if (i == 5 && j == 3) {
-                        placeOrange(cube, 1);
+                        placeOrange(cube, 1, solveArray);
                     }
                     if (i == 5 && j == 5) {
-                        bCW(cube);
-                        bCW(cube);
-                        placeOrange(cube, 1);
+                        bCW(cube, solveArray);
+                        bCW(cube, solveArray);
+                        placeOrange(cube, 1, solveArray);
                     }
                     if (i == 5 && j == 7) {
-                        bCW(cube);
-                        placeOrange(cube, 1);
+                        bCW(cube, solveArray);
+                        placeOrange(cube, 1, solveArray);
                     }
                 }
             }
@@ -769,49 +767,49 @@ void solveLayerTwo(std::array<std::array<char,9>, 6> &cube){
             if (cube[i][j] == 'B') {
                 if (findAdj(cube, i, j) == 'R') {
                     if (i == 1 && j == 1) {
-                        bCW(cube);
-                        placeBlue(cube, 0);
+                        bCW(cube, solveArray);
+                        placeBlue(cube, 0, solveArray);
                     }
                     if (i == 1 && j == 3) {
-                        bCW(cube);
-                        uCW(cube);
-                        bCCW(cube);
-                        uCCW(cube);
-                        bCCW(cube);
-                        lCCW(cube);
-                        bCW(cube);
-                        lCW(cube);
-                        bCW(cube);
-                        bCW(cube);
-                        placeBlue(cube, 0);
+                        bCW(cube, solveArray);
+                        uCW(cube, solveArray);
+                        bCCW(cube, solveArray);
+                        uCCW(cube, solveArray);
+                        bCCW(cube, solveArray);
+                        lCCW(cube, solveArray);
+                        bCW(cube, solveArray);
+                        lCW(cube, solveArray);
+                        bCW(cube, solveArray);
+                        bCW(cube, solveArray);
+                        placeBlue(cube, 0, solveArray);
                     }
                     if (i == 2 && j == 5) {
-                        bCW(cube);
-                        bCW(cube);
-                        placeBlue(cube, 0);
+                        bCW(cube, solveArray);
+                        bCW(cube, solveArray);
+                        placeBlue(cube, 0, solveArray);
                     }
                     if (i == 3 && j == 7) {
-                        bCCW(cube);
-                        placeBlue(cube, 0);
+                        bCCW(cube, solveArray);
+                        placeBlue(cube, 0, solveArray);
                     }
                     if (i == 4 && j == 3) {
-                        placeBlue(cube, 0);
+                        placeBlue(cube, 0, solveArray);
                     }
                     if (i == 5 && j == 1) {
-                        bCW(cube);
-                        bCW(cube);
-                        placeBlue(cube, 1);
+                        bCW(cube, solveArray);
+                        bCW(cube, solveArray);
+                        placeBlue(cube, 1, solveArray);
                     }
                     if (i == 5 && j == 3) {
-                        bCCW(cube);
-                        placeBlue(cube, 1);
+                        bCCW(cube, solveArray);
+                        placeBlue(cube, 1, solveArray);
                     }
                     if (i == 5 && j == 5) {
-                        bCW(cube);
-                        placeBlue(cube, 1);
+                        bCW(cube, solveArray);
+                        placeBlue(cube, 1, solveArray);
                     }
                     if (i == 5 && j == 7) {
-                        placeBlue(cube, 1);
+                        placeBlue(cube, 1, solveArray);
                     }
                 }
             }
@@ -821,102 +819,102 @@ void solveLayerTwo(std::array<std::array<char,9>, 6> &cube){
 
 }
 
-void placeRed(std::array<std::array<char,9>, 6> &cube, int i){
+void placeRed(std::array<std::array<char,9>, 6> &cube, int i, std::vector<std::string> &solveArray){
     //when on red face.
     if (i == 0){
-        bCW(cube);
-        rCW(cube);
-        bCCW(cube);
-        rCCW(cube);
-        bCCW(cube);
-        uCCW(cube);
-        bCW(cube);
-        uCW(cube);
+        bCW(cube, solveArray);
+        rCW(cube, solveArray);
+        bCCW(cube, solveArray);
+        rCCW(cube, solveArray);
+        bCCW(cube, solveArray);
+        uCCW(cube, solveArray);
+        bCW(cube, solveArray);
+        uCW(cube, solveArray);
     }
     //when on green face.
     if (i == 1){
-        bCCW(cube);
-        uCCW(cube);
-        bCW(cube);
-        uCW(cube);
-        bCW(cube);
-        rCW(cube);
-        bCCW(cube);
-        rCCW(cube);
+        bCCW(cube, solveArray);
+        uCCW(cube, solveArray);
+        bCW(cube, solveArray);
+        uCW(cube, solveArray);
+        bCW(cube, solveArray);
+        rCW(cube, solveArray);
+        bCCW(cube, solveArray);
+        rCCW(cube, solveArray);
     }
 }
 
-void placeGreen(std::array<std::array<char,9>, 6> &cube, int i){
+void placeGreen(std::array<std::array<char,9>, 6> &cube, int i, std::vector<std::string> &solveArray){
     //when on green face.
     if (i == 0){
-        bCW(cube);
-        dCW(cube);
-        bCCW(cube);
-        dCCW(cube);
-        bCCW(cube);
-        rCCW(cube);
-        bCW(cube);
-        rCW(cube);
+        bCW(cube, solveArray);
+        dCW(cube, solveArray);
+        bCCW(cube, solveArray);
+        dCCW(cube, solveArray);
+        bCCW(cube, solveArray);
+        rCCW(cube, solveArray);
+        bCW(cube, solveArray);
+        rCW(cube, solveArray);
     }
     //when on orange face.
     if (i == 1){
-        bCCW(cube);
-        rCCW(cube);
-        bCW(cube);
-        rCW(cube);
-        bCW(cube);
-        dCW(cube);
-        bCCW(cube);
-        dCCW(cube);
+        bCCW(cube, solveArray);
+        rCCW(cube, solveArray);
+        bCW(cube, solveArray);
+        rCW(cube, solveArray);
+        bCW(cube, solveArray);
+        dCW(cube, solveArray);
+        bCCW(cube, solveArray);
+        dCCW(cube, solveArray);
     }
 }
 
-void placeOrange(std::array<std::array<char,9>, 6> &cube, int i){
+void placeOrange(std::array<std::array<char,9>, 6> &cube, int i, std::vector<std::string> &solveArray){
     //when on orange face.
     if (i == 0){
-        bCW(cube);
-        lCW(cube);
-        bCCW(cube);
-        lCCW(cube);
-        bCCW(cube);
-        dCCW(cube);
-        bCW(cube);
-        dCW(cube);
+        bCW(cube, solveArray);
+        lCW(cube, solveArray);
+        bCCW(cube, solveArray);
+        lCCW(cube, solveArray);
+        bCCW(cube, solveArray);
+        dCCW(cube, solveArray);
+        bCW(cube, solveArray);
+        dCW(cube, solveArray);
     }
     //when on blue face.
     if (i == 1){
-        bCCW(cube);
-        dCCW(cube);
-        bCW(cube);
-        dCW(cube);
-        bCW(cube);
-        lCW(cube);
-        bCCW(cube);
-        lCCW(cube);
+        bCCW(cube, solveArray);
+        dCCW(cube, solveArray);
+        bCW(cube, solveArray);
+        dCW(cube, solveArray);
+        bCW(cube, solveArray);
+        lCW(cube, solveArray);
+        bCCW(cube, solveArray);
+        lCCW(cube, solveArray);
     }
 }
 
-void placeBlue(std::array<std::array<char,9>, 6> &cube, int i){
+void placeBlue(std::array<std::array<char,9>, 6> &cube, int i, std::vector<std::string> &solveArray){
     //when on blue face.
     if (i == 0){
-        bCW(cube);
-        uCW(cube);
-        bCCW(cube);
-        uCCW(cube);
-        bCCW(cube);
-        lCCW(cube);
-        bCW(cube);
-        lCW(cube);
+        bCW(cube, solveArray);
+        uCW(cube, solveArray);
+        bCCW(cube, solveArray);
+        uCCW(cube, solveArray);
+        bCCW(cube, solveArray);
+        lCCW(cube, solveArray);
+        bCW(cube, solveArray);
+        lCW(cube, solveArray);
     }
     //when on red face.
     if (i == 1){
-        bCCW(cube);
-        lCCW(cube);
-        bCW(cube);
-        lCW(cube);
-        bCW(cube);
-        uCW(cube);
-        bCCW(cube);
-        uCCW(cube);
+        bCCW(cube, solveArray);
+        lCCW(cube, solveArray);
+        bCW(cube, solveArray);
+        lCW(cube, solveArray);
+        bCW(cube, solveArray);
+        uCW(cube, solveArray);
+        bCCW(cube, solveArray);
+        uCCW(cube, solveArray);
     }
 }

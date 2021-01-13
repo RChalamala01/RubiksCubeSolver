@@ -1,10 +1,12 @@
 #include <array>
 #include "rotations.h"
 #include <iostream>
+#include <vector>
+
 
 //all of these moves are based on the standard rubik's notation for moves.
 
-void fCW(std::array<std::array<char,9>, 6> &cube){
+void fCW(std::array<std::array<char,9>, 6> &cube, std::vector<std::string> &storeArray){
     // performs change in matrix to represent a front clockwise move.
 
     std::array<std::array<char,9>,6> temp;
@@ -25,9 +27,10 @@ void fCW(std::array<std::array<char,9>, 6> &cube){
 
     faceTurnCW(cube, 0);
     std::cout << "F ";
+    storeArray.push_back("F");
 }
 
-void fCCW(std::array<std::array<char,9>, 6> &cube){
+void fCCW(std::array<std::array<char,9>, 6> &cube, std::vector<std::string> &storeArray){
     // performs change in matrix to represent a front counter clockwise move.
     std::array<std::array<char,9>,6> temp;
     temp = cube;
@@ -47,9 +50,10 @@ void fCCW(std::array<std::array<char,9>, 6> &cube){
 
     faceTurnCCW(cube, 0);
     std::cout << "F' ";
+    storeArray.push_back("F'");
 }
 
-void bCW(std::array<std::array<char,9>, 6> &cube){
+void bCW(std::array<std::array<char,9>, 6> &cube, std::vector<std::string> &storeArray){
     // performs change in matrix to represent a back clockwise move.
     std::array<std::array<char,9>,6> temp;
     temp = cube;
@@ -69,9 +73,10 @@ void bCW(std::array<std::array<char,9>, 6> &cube){
 
     faceTurnCW(cube, 5);
     std::cout << "B ";
+    storeArray.push_back("B");
 }
 
-void bCCW(std::array<std::array<char,9>, 6> &cube){
+void bCCW(std::array<std::array<char,9>, 6> &cube, std::vector<std::string> &storeArray){
     // performs change in matrix to represent a back counter clockwise move.
     std::array<std::array<char,9>,6> temp;
     temp = cube;
@@ -91,9 +96,10 @@ void bCCW(std::array<std::array<char,9>, 6> &cube){
 
     faceTurnCCW(cube, 5);
     std::cout << "B' ";
+    storeArray.push_back("B'");
 }
 
-void uCW(std::array<std::array<char,9>, 6> &cube){
+void uCW(std::array<std::array<char,9>, 6> &cube, std::vector<std::string> &storeArray){
     // performs change in matrix to represent a up clockwise move.
     std::array<std::array<char,9>,6> temp;
     temp = cube;
@@ -113,9 +119,10 @@ void uCW(std::array<std::array<char,9>, 6> &cube){
 
     faceTurnCW(cube, 1);
     std::cout << "U ";
+    storeArray.push_back("U");
 }
 
-void uCCW(std::array<std::array<char,9>, 6> &cube){
+void uCCW(std::array<std::array<char,9>, 6> &cube, std::vector<std::string> &storeArray){
     // performs change in matrix to represent a up counter clockwise move.
     std::array<std::array<char,9>,6> temp;
     temp = cube;
@@ -135,9 +142,10 @@ void uCCW(std::array<std::array<char,9>, 6> &cube){
 
     faceTurnCCW(cube, 1);
     std::cout << "U' ";
+    storeArray.push_back("U'");
 }
 
-void dCW(std::array<std::array<char,9>, 6> &cube){
+void dCW(std::array<std::array<char,9>, 6> &cube, std::vector<std::string> &storeArray){
     // performs change in matrix to represent a down clockwise move.
     std::array<std::array<char,9>,6> temp;
     temp = cube;
@@ -157,10 +165,10 @@ void dCW(std::array<std::array<char,9>, 6> &cube){
 
     faceTurnCW(cube, 3);
     std::cout << "D ";
-
+    storeArray.push_back("D");
 }
 
-void dCCW(std::array<std::array<char,9>, 6> &cube){
+void dCCW(std::array<std::array<char,9>, 6> &cube, std::vector<std::string> &storeArray){
     // performs change in matrix to represent a down counter clockwise move.
     std::array<std::array<char,9>,6> temp;
     temp = cube;
@@ -180,9 +188,10 @@ void dCCW(std::array<std::array<char,9>, 6> &cube){
 
     faceTurnCCW(cube, 3);
     std::cout << "D' ";
+    storeArray.push_back("D'");
 }
 
-void lCW(std::array<std::array<char,9>, 6> &cube){
+void lCW(std::array<std::array<char,9>, 6> &cube, std::vector<std::string> &storeArray){
     // performs change in matrix to represent a left clockwise move.
     std::array<std::array<char,9>,6> temp;
     temp = cube;
@@ -202,9 +211,10 @@ void lCW(std::array<std::array<char,9>, 6> &cube){
 
     faceTurnCW(cube, 4);
     std::cout << "L ";
+    storeArray.push_back("L");
 }
 
-void lCCW(std::array<std::array<char,9>, 6> &cube){
+void lCCW(std::array<std::array<char,9>, 6> &cube, std::vector<std::string> &storeArray){
     // performs change in matrix to represent a left counter clockwise move.
     std::array<std::array<char,9>,6> temp;
     temp = cube;
@@ -224,9 +234,10 @@ void lCCW(std::array<std::array<char,9>, 6> &cube){
 
     faceTurnCCW(cube, 4);
     std::cout << "L' ";
+    storeArray.push_back("L'");
 }
 
-void rCW(std::array<std::array<char,9>, 6> &cube){
+void rCW(std::array<std::array<char,9>, 6> &cube, std::vector<std::string> &storeArray){
     // performs change in matrix to represent a right clockwise move.
     std::array<std::array<char,9>,6> temp;
     temp = cube;
@@ -246,9 +257,10 @@ void rCW(std::array<std::array<char,9>, 6> &cube){
 
     faceTurnCW(cube, 2);
     std::cout << "R ";
+    storeArray.push_back("R");
 }
 
-void rCCW(std::array<std::array<char,9>, 6> &cube){
+void rCCW(std::array<std::array<char,9>, 6> &cube, std::vector<std::string> &storeArray){
     // performs change in matrix to represent a right counter clockwise move.
     std::array<std::array<char,9>,6> temp;
     temp = cube;
@@ -268,6 +280,7 @@ void rCCW(std::array<std::array<char,9>, 6> &cube){
 
     faceTurnCCW(cube, 2);
     std::cout << "R' ";
+    storeArray.push_back("R'");
 }
 
 void faceTurnCW(std::array<std::array<char,9>, 6> &cube, int colorIndex){
