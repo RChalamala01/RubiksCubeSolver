@@ -51,27 +51,27 @@ void printCube(std::array<std::array<char,9>, 6> &cube){
         std::cout << side[i] << std::endl;
         for (int j = 0; j < 9; j++){
             if (cube[i][j] == 'R'){
-                std::cout << "\033[48;2;170;0;0m" << cube[i][j];
+                std::cout << "\033[48;2;170;0;0m" << "  ";
                 std::cout << "\033[0m";
             }
             else if (cube[i][j] == 'B'){
-                std::cout << "\033[48;2;0;0;255m" << cube[i][j];
+                std::cout << "\033[48;2;0;0;255m" << "  ";
                 std::cout << "\033[0m";
             }
             else if (cube[i][j] == 'Y'){
-                std::cout << "\033[48;2;229;229;16m" << cube[i][j];
+                std::cout << "\033[48;2;229;229;16m" << "  ";
                 std::cout << "\033[0m";
             }
             else if (cube[i][j] == 'G'){
-                std::cout << "\033[48;2;0;170;0m" << cube[i][j];
+                std::cout << "\033[48;2;0;170;0m" << "  ";
                 std::cout << "\033[0m";
             }
             else if (cube[i][j] == 'O'){
-                std::cout << "\033[48;2;252;127;0m" << cube[i][j];
+                std::cout << "\033[48;2;252;127;0m" << "  ";
                 std::cout << "\033[0m";
             }
             else if (cube[i][j] == 'W'){
-                std::cout << "\033[48;2;255;255;255m" << cube[i][j];
+                std::cout << "\033[48;2;255;255;255m" << "  ";
                 std::cout << "\033[0m";
             }
 
