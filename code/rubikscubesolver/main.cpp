@@ -24,6 +24,7 @@ int main(){
     std::vector<std::string> solveArray = {};
 
     originalState(cube);
+    printCube(cube);
 
     cubeScramble(cube,scrambleArray);
     printCube(cube);
@@ -39,11 +40,17 @@ int main(){
 
 void solveCube(std::array<std::array<char,9>,6> &cube, std::vector<std::string> &solveArray){
     solveCross(cube, solveArray);
+    std::cout << std::endl;
     solveCorners(cube, solveArray);
+    std::cout << std::endl;
     solveLayerTwo(cube, solveArray);
+    std::cout << std::endl;
     solveTopCross(cube, solveArray);
+    std::cout << std::endl;
     solveYellowEdges(cube, solveArray);
+    std::cout << std::endl;
     solveTopCorners(cube, solveArray);
+    std::cout << std::endl;
     printCube(cube);
 }
 
