@@ -5,6 +5,7 @@
 #include "topsolver.h"
 #include <vector>
 #include <iostream>
+//#include <chrono>
 
 /* Rotation Notation: Everything based on Front (White Side).
      * Cube needs to initially be in the correct orientation.
@@ -20,35 +21,38 @@ void solutionFix(std::vector<std::string> &solveArray);
 int main(){
     //generating the cube.
 
+    //auto start = std::chrono::high_resolution_clock::now();
+
     std::array<std::array<char,9>,6> cube;
     std::vector<std::string> scrambleArray = {};
     std::vector<std::string> solveArray = {};
 
     originalState(cube);
-    printCube(cube);
+    //printCube(cube);
 
-    std::cout << "Cube Scramble: ";
+    std::cout << std::endl << std::endl;
+    std::cout << std::endl << "Cube Scramble: ";
+    std::cout << std::endl;
     cubeScramble(cube,scrambleArray);
     printCube(cube);
 
     solveCube(cube, solveArray);
 
-    std::cout << solveArray.size();
+    std::cout << std::endl << std::endl << "Number of turns: " << solveArray.size() << std::endl;
     solutionFix(solveArray);
 
 //    int counter = 0;
-//    int iterations = 100000;
+//    int iterations = 1000000;
 //    for (int i = 0; i < iterations; i++){
 //        std::array<std::array<char,9>,6> cube;
 //        std::vector<std::string> scrambleArray = {};
 //        std::vector<std::string> solveArray = {};
 //
-//        originalState(cube);
-//        //printCube(cube);
+//        originalState(cube);\
 //
 //        std::cout << "Cube Scramble: ";
+//        std::cout <<std::endl;
 //        cubeScramble(cube,scrambleArray);
-//        //printCube(cube);
 //
 //        solveCube(cube, solveArray);
 //
@@ -56,30 +60,47 @@ int main(){
 //        counter += solveArray.size();
 //        solutionFix(solveArray);
 //    }
-//
-//    std::cout << std::endl << "Average Number of Moves: " << counter/iterations;
 
+//    std::cout << std::endl << std::endl << "Average Number of Moves: " << counter/iterations;
+
+//    auto end = std::chrono::high_resolution_clock::now();
+//    auto timeTotal = std::chrono::duration_cast<std::chrono::seconds>(end - start);
+//
+//
+//    std::cout << std::endl;
+//    std::cout << "Runtime: " << timeTotal.count() << " seconds" << std::endl;
 
     return 0;
 
 }
 
 void solveCube(std::array<std::array<char,9>,6> &cube, std::vector<std::string> &solveArray){
+    std::cout << std::endl << std::endl;
     std::cout << "Cross Solve: ";
     std::cout << std::endl;
     solveCross(cube, solveArray);
+    std::cout << std::endl;
+    printCube(cube);
     std::cout << std::endl << std::endl;
     std::cout << "Corner Solve: " << std::endl;
     solveCorners(cube, solveArray);
+    std::cout << std::endl;
+    printCube(cube);
     std::cout << std::endl << std::endl;
     std::cout << "First Two Layer Solve: " << std::endl;
     solveLayerTwo(cube, solveArray);
+    std::cout << std::endl;
+    printCube(cube);
     std::cout << std::endl << std::endl;
     std::cout << "Top Cross Solve: " << std::endl;
     solveTopCross(cube, solveArray);
+    std::cout << std::endl;
+    printCube(cube);
     std::cout << std::endl << std::endl;
     std::cout << "Top Edges Solve: " <<std::endl;
     solveYellowEdges(cube, solveArray);
+    std::cout << std::endl;
+    printCube(cube);
     std::cout << std::endl << std::endl;
     std::cout << "Top Corners Solve: " << std::endl;
     solveTopCorners(cube, solveArray);
